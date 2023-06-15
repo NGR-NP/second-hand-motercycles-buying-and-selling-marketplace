@@ -1,0 +1,87 @@
+/* .nav {
+  display: flex;
+  align-items: center;
+} */
+.NavUl {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+}
+.NavUl li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* .buyDropDownUl {
+  list-style-type: none;
+} */
+
+/* .buyDropDownLi:hover {
+  background-color: rgb(237, 237, 237);
+} */
+/* .buyDropDownUl:last-child {
+  padding-bottom: 0.5rem;
+}
+.buyDropDownUl:first-child {
+  padding-top: 0.5rem;
+} */
+.buyButton,
+.sellButton,
+.aboutButton,
+.contactButton {
+  padding: 0.6rem;
+  position: relative;
+  cursor: pointer;
+}
+.buyDropDownMain,
+.sellDropDownMain,
+.aboutDropDownMain {
+  position: absolute;
+  color: #3d3939;
+  top: 2.5rem;
+  transition: all 100ms ease-in-out;
+  visibility: hidden;
+}
+.buyDropDownCont,
+.sellDropDownCont,
+.aboutDropDownCont {
+  width: max-content;
+  background-color: hsl(0, 0%, 90%);
+  box-shadow: 10px 10px 100px 21px rgba(0, 0, 0, 0.15);
+}
+.buyDropDownLi,
+.sellDropDownLi,
+.aboutDropDownLi {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.buyDropDownUl,
+.sellDropDownUl,
+.aboutDropDownUl {
+  list-style-type: none;
+}
+
+:is(.buyDropDownUl, .sellDropDownUl, .aboutDropDownUl) > li:hover {
+  background-color: rgb(237, 237, 237);
+}
+:is(.buyDropDownUl, .sellDropDownUl, .aboutDropDownUl):last-child {
+  padding-bottom: 0.5rem;
+}
+:is(.buyDropDownUl, .sellDropDownUl, .aboutDropDownUl):first-child {
+  padding-top: 0.5rem;
+}
+/* .buyButton:hover > div,
+.sellButton:hover > div,
+.aboutButton:hover > div {
+  visibility: visible;
+} */
+
+:is(.buyButton, .sellButton, .aboutButton):hover > div {
+  visibility: visible;
+}
+.contactButton > a {
+  text-decoration: none;
+  color: black;
+}

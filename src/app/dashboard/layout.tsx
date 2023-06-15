@@ -1,11 +1,14 @@
 import UserHeader from "@/sections/header/userHeader/UserHeader";
-import styles from "./page.module.css";
 
-export default function Home() {
+export default function UserDashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <UserHeader />
-      <main>home page</main>
+      {children}
     </>
   );
 }
