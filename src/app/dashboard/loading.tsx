@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
 
-const loading = () => {
+export default function Loading() {
   return (
-    <div>loading ......</div>
-  )
-}
-
-export default loading
+    <div
+      style={{
+        height: "100vh",
+        width: "100vw",
+        fontSize: "4rem",
+        color: "white",
+        background: "red",
+        
+      }}
+    >
+      <h1>Loading..........</h1>
+      <h1>Loading..........</h1>
+      <h1>Loading..........</h1>
+      <h1>Loading..........</h1>
+      <h1>Loading..........</h1>
+      <h1>Loading..........</h1>
+      <h1>Loading..........</h1>
+    </div>
+  );
+};
