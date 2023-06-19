@@ -1,0 +1,96 @@
+.sec {
+  position: relative;
+  width: 100vw;
+}
+.sec::before {
+  content: "";
+  background-image: url(/images/design/bg-texture-header-white-4.png);
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* opacity: 0.35; */
+  bottom: calc(100% - 71px);
+  left: 0;
+  right: 0;
+  height: 142px;
+}
+.cont {
+  padding: 2rem 0.5rem;
+}
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 2rem 1rem;
+}
+.imgCont {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  transition: all 300ms ease-in-out;
+}
+.img {
+  object-fit: cover;
+  transition: all 300ms ease-in-out;
+  user-select: none;
+
+}
+/* .group:hover img{
+  scale: 1.2;
+}
+.group:hover .textCont{
+  font-size: 2.5rem;
+} */
+.group:hover :is(.layer, .img, .textCont) {
+  border-radius: 10%;
+  
+}
+.group {
+  position: relative;
+}
+.layer {
+  position: absolute;
+
+  background: rgba(0, 0, 0, 0.281);
+  transition: all 300ms ease-in-out;
+}
+:is(.layer, .img) {
+  border-radius: 50%;
+  height: 20rem;
+  width: 20rem;
+}
+.textCont {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+}
+@media (width <= 1200px) {
+  :is(.layer, .img) {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+@media (width <= 850px) {
+  :is(.layer, .img) {
+    height: 12rem;
+    width: 12rem;
+  }
+}
+@media (width <= 700px) {
+  :is(.layer, .img) {
+    height: 30vmin;
+    width: 30vmin;
+  }
+  .textCont {
+    font-size: 1rem;
+  }
+  .imgCont {
+    gap: 1rem;
+  }
+}

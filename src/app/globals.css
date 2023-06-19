@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  /* border: 0.4px solid; */
 }
 
 html,
@@ -9,19 +10,68 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+.test {
+  color: hsl(0, 100%, 67%);
+  color: hsl(4, 72%, 46%);
+  color: hsl(0, 82%, 37%);
+  color: hsl(0, 0%, 35%);
+  color: hsl(0, 0%, 27%);
+  color: hsl(0, 0%, 19%);
+  color: hsl(0, 0%, 13%);
 
+  color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 92%);
+  color: hsl(0, 100%, 96%);
+  color: hsl(0, 100%, 89%);
+  color: hsl(0, 30%, 27%);
+}
 :root {
-  --bg-primary-white: #f9f9f9;
-  --bg-primary-black: #121212;
-  --max-width: 1100px;
+  --clr-accent-1: 0, 100%, 67%;
+  --clr-accent-2: 39, 100%, 56%;
+  --clr-accent-3: 166, 100%, 37%;
+  --clr-accent-4: 234, 85%, 45%;
+
+  --clr-gray-100: hsl(0, 0%, 91%);
+  --clr-gray-200: hsl(0, 0%, 83%);
+  --clr-gray-300: hsl(0, 0%, 75%);
+
+  --clr-secondary-hsl-100: 0, 100%, 67%;
+  --clr-secondary-hsl-200: 4, 72%, 46%;
+  --clr-secondary-hsl-300: 0, 82%, 37%;
+  --clr-primary-hsl-100: 0, 0%, 35%;
+  --clr-primary-hsl-200: 0, 0%, 27%;
+  --clr-primary-hsl-300: 0, 0%, 19%;
+  --clr-primary-hsl-400: 0, 0%, 13%;
+
+  --clr-neutral-hsl-100: 0, 0%, 100%;
+  --clr-neutral-hsl-200: 0, 0%, 92%;
+  --clr-neutral-hsl-300: 0, 100%, 96%;
+  --clr-neutral-hsl-400: 0, 100%, 89%;
+  --clr-neutral-hsl-700: 0, 30%, 27%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+  --clr-neutral-400: hsl(var(--clr-neutral-hsl-400));
+  --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+
+  --clr-primary-100: hsl(var(--clr-primary-hsl-100));
+  --clr-primary-200: hsla(var(--clr-primary-hsl-200));
+  --clr-primary-300: hsla(var(--clr-primary-hsl-300));
+  --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+  --clr-secondary-100: hsl(var(--clr-secondary-hsl-100));
+  --clr-secondary-200: hsl(var(--clr-secondary-hsl-200));
+  --clr-secondary-300: hsl(var(--clr-secondary-hsl-300));
+
+  --max-width: 1200px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --font-courier: "Courier New", Courier, monospace;
+  --font-franklin: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --font-lucida: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -47,11 +97,6 @@ body {
     #00000010,
     #00000080
   );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
 }
 .page-not-found-main {
   height: 100vh;

@@ -1,11 +1,19 @@
 import UserHeader from "@/sections/header/userHeader/UserHeader";
-import styles from "./page.module.css";
+import HeroSection from "@/sections/home/HeroSection";
+import InspireSection from "@/sections/home/InspireSection";
+import PickYourRideSection from "@/sections/home/PickYourRideSection";
+import ShopByPrice from "@/sections/home/ShopByPrice";
 
 export default function Home() {
   return (
     <>
       <UserHeader />
-      <main>home page</main>
+      <main>
+        <HeroSection />
+        <ShopByPrice />
+        <InspireSection />
+        <PickYourRideSection />
+      </main>
     </>
   );
 }
