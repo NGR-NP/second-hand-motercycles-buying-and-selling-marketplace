@@ -1,7 +1,7 @@
 import React from "react";
 
 const AppLogo = () => {
-  return <div>Kalo bhat bhatay</div>;
+  return <div>MoterCycle</div>;
 };
 
 export default AppLogo;

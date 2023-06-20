@@ -5,9 +5,7 @@ import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
 
 import {
   Button,
-  Checkbox,
   FormControl,
-  FormControlLabel,
   Grid,
   IconButton,
   InputAdornment,
@@ -41,7 +39,9 @@ const Register = () => {
     const { name, value } = e.target;
     setUser((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    
+  };
   const paperStyle = {
     maxWidth: 400,
     padding: 20,
