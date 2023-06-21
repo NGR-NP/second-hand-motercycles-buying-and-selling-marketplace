@@ -12,7 +12,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
 import AppLogo from "@/components/logo/AppLogo";
 
 const pages = [
@@ -24,7 +23,7 @@ const pages = [
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function ResponsiveAppBar() {
+function UserHeader() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -59,7 +58,6 @@ function ResponsiveAppBar() {
         maxWidth="xl"
       >
         <Toolbar className="toolbar------" disableGutters>
-          <TwoWheelerIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             className="typography--------"
             variant="h6"
@@ -132,7 +130,6 @@ function ResponsiveAppBar() {
               })}
             </Menu>
           </Box>
-          <TwoWheelerIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             className="typography-----"
             variant="h5"
@@ -218,4 +215,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default UserHeader;
