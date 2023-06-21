@@ -31,13 +31,12 @@ db.reviews = require("./dataModel/reviewModel")(sequelize, DataTypes);
 
 // relation
 db.users.hasMany(db.reviews);
-db.reviews.belongsTo(db.user)
+db.reviews.belongsTo(db.users);
 
 db.sequelize.sync({
     force: false
 }).then(() => {
     console.log("yes! sync done");
 })
-
 
 module.exports = db;   
