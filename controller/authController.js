@@ -137,8 +137,8 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
 // check user is logged in or not
 exports.isLoggedIn = catchAsync(async (req, res, next) => {
-    const cookie = req.body.cookie;
-    const jwtDecode = jwt.verify(cookie, process.env.JWT_SECRET);
+    console.log(req.body.cookie)
+    const jwtDecode = jwt.verify(req.body.cookie, process.env.JWT_SECRET);
     if (jwtDecode.iat > jwtDecode.exp) {
         return statusFunc(res, 200, "expired cookie");
     }
@@ -150,11 +150,9 @@ exports.isLoggedIn = catchAsync(async (req, res, next) => {
             exclude: ["password", "refreshToken"]
         }
     });
-
+    console.log(findUser)
     res.locals.userData = findUser;
-    // console.log(req.locals.userData);
     next();
-    // statusFunc(res, 403, findUser);
 })
 
 exports.checkuser = catchAsync(async (req, res, next) => {

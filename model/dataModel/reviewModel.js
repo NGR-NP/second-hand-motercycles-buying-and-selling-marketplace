@@ -9,6 +9,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         productId: {
             type: Sequelize.STRING
+        },
+        userId:{
+            type: Sequelize.STRING
         }
     })
     return review;

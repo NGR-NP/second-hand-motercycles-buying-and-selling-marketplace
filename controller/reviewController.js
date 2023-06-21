@@ -13,13 +13,13 @@ const statusFunc = (res, status, message) => {
 // upload review
 exports.review_upload = async (req, res) => {
     const {reviewText, ratingPoint} = req.body;
-    console.log(typeof(req.params.id));
+    console.log(res.locals.users);
 
-    const uploadReview = await reviewModel.create({
-        review: reviewText,
-        rating: ratingPoint,
-        productId: req.params.id
-    });
+    // const uploadReview = await reviewModel.create({
+    //     review: reviewText,
+    //     rating: ratingPoint,
+    //     userId: req.params.id
+    // });
 
-    statusFunc(res, 200, uploadReview);
+    statusFunc(res, 200, "he");
 }
