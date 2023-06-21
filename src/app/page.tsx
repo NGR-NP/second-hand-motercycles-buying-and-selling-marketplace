@@ -5,7 +5,6 @@ import PickYourRideSection from "@/sections/home/PickYourRideSection";
 import ShopByPrice from "@/sections/home/ShopByPrice";
 
 export default function Home() {
-  const test = "name";
   return (
     <>
       <UserHeader />
