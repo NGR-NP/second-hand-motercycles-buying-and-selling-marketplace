@@ -1,23 +1,9 @@
 "use client";
+import styles from "./login.module.css";
+import { useState } from "react";
+import { BiShow, BiHide } from "react-icons/bi";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-import { ChangeEvent, useState } from "react";
-import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
-
-import {
-  Button,
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  Grid,
-  IconButton,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  Paper,
-  TextField,
-  Typography,
-} from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Link from "next/link";
 import AppLogo from "@/components/logo/AppLogo";
 type User = {
@@ -28,124 +14,89 @@ const Login = () => {
   const [user, setUser] = useState<User>({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>();
+  const onSubmit: SubmitHandler<User> = (data) => console.log("submit", data);
+
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setUser((prev) => ({ ...prev, [name]: value }));
-  };
-  const handleSubmit = () => {};
-  const paperStyle = {
-    maxWidth: 400,
-    padding: 20,
-    margin: "20px 1rem",
-  };
-  const btnstyle = { margin: "8px 0" };
   return (
-    <Grid
-      display={"flex"}
-      height={"100vh"}
-      justifyContent={"center"}
-      alignItems={"center"}
-    >
-      <Paper elevation={10} style={paperStyle}>
-        <Grid
-          display={"flex"}
-          justifyContent={"center"}
-          flexDirection={"column"}
-          alignItems={"center"}
-        >
-          <TwoWheelerIcon
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              mr: 1,
-              rotate: 3,
-            }}
-          />
-          <Typography
-            className="typography-----"
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: "flex",
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              textAlign: "center",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <AppLogo />
-          </Typography>
-          <h2 style={{ textAlign: "center", marginTop: "1rem" }}>Login</h2>
-        </Grid>
-        <TextField
-          label="email"
-          variant="outlined"
-          fullWidth
-          required
-          value={user.email}
-          onChange={handleChange}
-          sx={{ margin: "1rem 0 0.5rem 0" }}
-        />
+    <section className={styles.sec}>
+      <div className={styles.cont}>
+        <div className={styles.content}>
+          <AppLogo />
+          <h2>Login</h2>
+          <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+            <div className={styles.inputBox}>
+              <input
+                style={
+                  errors.email
+                    ? { border: "1px solid red" }
+                    : { border: "none" }
+                }
+                {...register("email", {
+                  required: true,
+                  pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
+                })}
+              />
+              <i>Email</i>
+              {errors?.email?.type === "required" && (
+                <div className={styles.requiredMesage}>email is required</div>
+              )}
+            </div>
 
-        <FormControl
-          sx={{ width: "100%", margin: "0.5rem 0 1rem 0" }}
-          variant="outlined"
-        >
-          <InputLabel htmlFor="outlined-adornment-password">
-            Password
-          </InputLabel>
-          <OutlinedInput
+            <div className={styles.inputBox}>
+              <input
+                style={
+                  errors.password
+                    ? { border: "1px solid red" }
+                    : { border: "none" }
+                }
+                className={styles.inputPassword}
+                type={showPassword ? "text" : "password"}
+                {...register("password", {
+                  required: true,
+                  pattern:
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
+                })}
+              />
+              <i>Password</i>
+              {errors?.password?.type === "required" && (
+                <div className={styles.requiredMesage}>
+                  password is required
+                </div>
+              )}
 
-            id="outlined-adornment-password"
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-            required
-          />
-        </FormControl>
-        <FormControlLabel
-          control={<Checkbox name="checkedB" color="primary" />}
-          label="Remember me"
-        />
-        <Button
-          type="submit"
-          color="primary"
-          variant="contained"
-          style={btnstyle}
-          fullWidth
-        >
-          Login
-        </Button>
-        <Typography>
-          <Link href="/reset-password">Forgot password ?</Link>
-        </Typography>
-        <Typography>
-          {" "}
-          Do you have an account ? <Link href="/register">Register</Link>
-        </Typography>
-      </Paper>
-    </Grid>
+              <div className={styles.PasswordVisibleIcons}>
+                {showPassword ? (
+                  <BiHide onClick={handleClickShowPassword} />
+                ) : (
+                  <BiShow onClick={handleClickShowPassword} />
+                )}
+              </div>
+            </div>
+
+            <div style={{ color: "white", textAlign: "end" }}>
+              <Link style={{ color: "white" }} href="/reset-password">
+                Forgot password ?
+              </Link>
+            </div>
+            <div className={styles.inputBox}>
+              <input type="submit" value="login" />
+            </div>
+          </form>
+          <div style={{ color: "white" }}>
+            Do you have an account?{" "}
+            <Link style={{ color: "hsl(0, 100%, 89%)" }} href="/register">
+              Register
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
