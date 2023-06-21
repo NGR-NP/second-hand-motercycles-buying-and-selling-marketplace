@@ -20,6 +20,8 @@ const statusFunc = (res, status, message) => {
 const createCookies = (res, status, userSignin) => {
     const token = jwt_signin(userSignin.id);
 
+    // cont 
+
     res.cookie('jwt', token, {
         maxAge: new Date(
             Date.now() + process.env.BROWSER_COOKIES_EXPIRES_IN * 24 * 60 * 60 * 1000
