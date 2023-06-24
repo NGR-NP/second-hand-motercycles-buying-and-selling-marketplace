@@ -139,7 +139,9 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
 // check user is logged in or not
 exports.isLoggedIn = catchAsync(async (req, res, next) => {
-    console.log(req.body.cookie)
+    if(!req.body.cookie){
+        return statusFunc(res, 404, "please login")
+    }
     const jwtDecode = jwt.verify(req.body.cookie, process.env.JWT_SECRET);
     if (jwtDecode.iat > jwtDecode.exp) {
         return statusFunc(res, 200, "expired cookie");
@@ -172,8 +174,4 @@ exports.givePermissionTo = (...roles) => {
         }
         return next();
     }
-}
-
-exports.sayTest = async(req, res) => {
-    statusFunc(res, 200, "saying hello");
 }
