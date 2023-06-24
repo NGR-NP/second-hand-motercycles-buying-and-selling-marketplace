@@ -5,7 +5,7 @@ const product = database.products;
 const statusFunc = (res, status, message) => {
     res.json({
         status,
-        message: message
+        message
     })
 }
 
