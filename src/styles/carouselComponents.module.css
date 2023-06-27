@@ -1,0 +1,35 @@
+.carousel {
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  /* background-color: red; */
+  margin: auto;
+  border-radius: 2rem;
+}
+.cont {
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+.buttonsCont {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  inset: 0;
+}
+.buttonsCont button {
+  height: 20px;
+  width: 20px;
+  border: none;
+  padding: 0.25rem;
+  border-radius: 50%;
+  box-shadow: 1px 1px 7px rgb(0 0 0 / 28%);
+  background-color: rgba(255, 255, 255, 0.788);
+  color: rgb(97, 95, 95);
+}
+.buttonsCont button:hover {
+  background-color: #fff;
+}

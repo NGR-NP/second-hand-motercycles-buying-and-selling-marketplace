@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* border: 0.4px solid; */
+}
+
+.hideScroollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.hideScroollbar::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+
+.hideScroollbar::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+:root {
+  --clr-accent-1: hsl(0, 100%, 67%);
+  --clr-accent-2: hsl(39, 100%, 56%);
+  --clr-accent-3: hsl(166, 100%, 37%);
+  --clr-accent-4: hsl(234, 85%, 45%);
+
+  --pharlap: hsl(7, 19%, 53%);
+  --falcon: hsl(323, 11%, 47%);
+
+  --red1: hsl(16, 84%, 73%);
+  --red2: hsl(11, 66%, 67%);
+  --red3: hsl(354, 71%, 41%);
+  --red4: hsl(353, 76%, 40%);
+  --red5: hsl(353, 59%, 36%);
+  --red6: hsl(342, 44%, 23%);
+  --red7: hsl(340, 54%, 21%);
+
+  --white1: hsl(0, 0%, 100%);
+  --white2: hsl(0, 0%, 92%);
+  --white3: hsl(0, 100%, 96%);
+  --white4: hsl(0, 100%, 89%);
+
+  --black1: hsl(223, 24%, 29%);
+  --black2: hsl(230, 11%, 32%);
+  --black3: hsl(228, 27%, 22%);
+  --black4: hsl(224, 35%, 21%);
+  --black5: hsl(315, 26%, 12%);
+  --black6: hsl(226, 36%, 14%);
+
+  --clr-black1: hsl(0, 0%, 35%);
+  --clr-black2: hsl(0, 0%, 27%);
+  --clr-black3: hsl(0, 0%, 19%);
+  --clr-black4: hsl(0, 0%, 13%);
+
+  --clr-red1: hsl(0, 100%, 67%);
+  --clr-red2: hsl(4, 72%, 46%);
+  --clr-red3: hsl(0, 82%, 37%);
+  --clr-red4: hsl(0, 30%, 27%);
+
+  /* adjustable hsl */
+  --clr-accent-1-hsl: 0, 100%, 67%;
+  --clr-accent-2-hsl: 39, 100%, 56%;
+  --clr-accent-3-hsl: 166, 100%, 37%;
+  --clr-accent-4-hsl: 234, 85%, 45%;
+
+  --pharlap-hsl: 7, 19%, 53%;
+  --falcon-hsl: 323, 11%, 47%;
+
+  --red1-hsl: 16, 84%, 73%;
+  --red2-hsl: 11, 66%, 67%;
+  --red3-hsl: 354, 71%, 41%;
+  --red4-hsl: 353, 76%, 40%;
+  --red5-hsl: 353, 59%, 36%;
+  --red6-hsl: 342, 44%, 23%;
+  --red7-hsl: 340, 54%, 21%;
+
+  --white1-hsl: 0, 0%, 100%;
+  --white2-hsl: 0, 0%, 92%;
+  --white3-hsl: 0, 100%, 96%;
+  --white4-hsl: 0, 100%, 89%;
+
+  --black1-hsl: 223, 24%, 29%;
+  --black2-hsl: 230, 11%, 32%;
+  --black3-hsl: 228, 27%, 22%;
+  --black4-hsl: 224, 35%, 21%;
+  --black5-hsl: 315, 26%, 12%;
+  --black6-hsl: 226, 36%, 14%;
+
+  --clr-black1-hsl: 0, 0%, 35%;
+  --clr-black2-hsl: 0, 0%, 27%;
+  --clr-black3-hsl: 0, 0%, 19%;
+  --clr-black4-hsl: 0, 0%, 13%;
+
+  --clr-red1-hsl: 0, 100%, 67%;
+  --clr-red2-hsl: 4, 72%, 46%;
+  --clr-red3-hsl: 0, 82%, 37%;
+  --clr-red4-hsl: 0, 30%, 27%;
+
+  /* adjustable hsl end */
+
+  --clr-gray-100: hsl(0, 0%, 91%);
+  --clr-gray-200: hsl(0, 0%, 83%);
+  --clr-gray-300: hsl(0, 0%, 75%);
+
+  --clr-secondary-hsl-100: 0, 100%, 67%;
+  --clr-secondary-hsl-200: 4, 72%, 46%;
+  --clr-secondary-hsl-300: 0, 82%, 37%;
+  --clr-primary-hsl-100: 0, 0%, 35%;
+  --clr-primary-hsl-200: 0, 0%, 27%;
+  --clr-primary-hsl-300: 0, 0%, 19%;
+  --clr-primary-hsl-400: 0, 0%, 13%;
+
+  --clr-neutral-hsl-100: 0, 0%, 100%;
+  --clr-neutral-hsl-200: 0, 0%, 92%;
+  --clr-neutral-hsl-300: 0, 100%, 96%;
+  --clr-neutral-hsl-400: 0, 100%, 89%;
+  --clr-neutral-hsl-700: 0, 30%, 27%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+  --clr-neutral-400: hsl(var(--clr-neutral-hsl-400));
+  --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+
+  --clr-primary-100: hsl(var(--clr-primary-hsl-100));
+  --clr-primary-200: hsla(var(--clr-primary-hsl-200));
+  --clr-primary-300: hsla(var(--clr-primary-hsl-300));
+  --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+  --clr-secondary-100: hsl(var(--clr-secondary-hsl-100));
+  --clr-secondary-200: hsl(var(--clr-secondary-hsl-200));
+  --clr-secondary-300: hsl(var(--clr-secondary-hsl-300));
+
+  --max-width: 1200px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-courier: "Courier New", Courier, monospace;
+  --font-franklin: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --font-lucida: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #16abff33 0deg,
+    #0885ff33 55deg,
+    #54d6ff33 120deg,
+    #0071ff33 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(
+    #00000080,
+    #00000040,
+    #00000030,
+    #00000020,
+    #00000010,
+    #00000010,
+    #00000080
+  );
+}
+.page-not-found-main {
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  background-color: #e3e3e3;
+}
+.page-not-found-section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-not-found-container {
+  max-width: 400px;
+  width: 400px;
+  margin: 0 1rem;
+}
+.page-not-found-img-wraper {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.page-not-found-shockedImage {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 60%;
+  height: 60%;
+}
+.page-not-found-card {
+  border-radius: 1rem;
+  background-color: #f6f6f6;
+  color: rgb(12, 12, 12);
+  position: absolute;
+  bottom: -6rem;
+  left: 0;
+  right: 28%;
+  padding: 1rem 2rem 2rem;
+}
+.page-not-found-closeIcon {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.page-not-found-text-1 {
+  font-weight: 700;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 0.8rem 0;
+}
+.page-not-found-text-2 {
+  font-weight: 900;
+  margin: 0.4rem 0 0.5rem 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.2cqb;
+}
+.page-not-found-text-3 {
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 0.2cqb;
+  margin: 0.4rem 0 0.5rem 0;
+}

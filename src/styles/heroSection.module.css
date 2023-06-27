@@ -1,0 +1,48 @@
+.hero {
+    width: 100%;
+    height: 70vh;
+    background-image: url(/images/background/bg-hero-section.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .layer {
+    width: 100%;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.295);
+  }
+  .button {
+    color: #fff;
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    outline: pointer;
+    margin: 0 0.5rem;
+    cursor: pointer;
+  }
+  .button:hover {
+    border-color: hsl(var(--clr-secondary-hsl-300));
+    background-color: hsl(var(--clr-primary-hsl-100), 0.5);
+  }
+  .content {
+    color: #fbfcfd;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .title {
+    font-size: 80px;
+    margin: 10px 0 30px;
+    line-height: 80px;
+  }
+  
+  @media (width <= 600px) {
+    .title {
+      font-size: 15vmin;
+    }
+  }
+  
