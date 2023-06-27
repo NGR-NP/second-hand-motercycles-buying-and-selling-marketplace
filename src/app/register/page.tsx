@@ -50,8 +50,9 @@ const Register = () => {
                 </div>
               )}
             </div>
-            <div className={styles.inputBox} >
-              <input className="shadow-lg"
+            <div className={styles.inputBox}>
+              <input
+                className="shadow-lg"
                 style={
                   errors.lastName?.type === "required"
                     ? { border: "1px solid red" }

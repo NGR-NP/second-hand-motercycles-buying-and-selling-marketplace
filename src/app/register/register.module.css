@@ -1,0 +1,116 @@
+.requiredMesage {
+  color: red;
+  padding: 5px 1px 0 10px;
+}
+.sec {
+  background-color: var(--clr-primary-100);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  background-image: url(/images/background/bg-hero-section.jpg);
+  background-position: center;
+  background-repeat: space;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+.cont {
+  position: absolute;
+  width: 400px;
+  background: #222;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 9);
+}
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.content h2 {
+  font-size: 2em;
+  color: var(--clr-neutral-300);
+  text-transform: uppercase;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+.inputBox input {
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+.inputBox i {
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.inputBox input:focus ~ i,
+.inputBox input:valid ~ i {
+  transform: translateY(-8.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.inputPassword {
+  padding-right: 2.9rem !important;
+}
+
+.inputBox input[type="submit"] {
+  padding: 10px;
+  background: var(--clr-neutral-200);
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+}
+.inputBox input[type="submit"]:hover {
+  background-color: var(--clr-neutral-300);
+  scale: 1.1;
+}
+.inputBox input[type="submit"]:active {
+  scale: 0.8;
+  transition: all 300ms ease-in-out;
+}
+
+.PasswordVisibleIcons {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.5rem;
+  top: 10%;
+  transform: translateY(50%);
+  color: var(--clr-neutral-200);
+}
