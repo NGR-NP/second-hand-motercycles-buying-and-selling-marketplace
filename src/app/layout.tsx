@@ -21,6 +21,5 @@ export default function RootLayout({
     </html>
   );
 }
-{
-  /* // suppressHydrationWarning={true} */
-}
+
+/* // suppressHydrationWarning={true} */
