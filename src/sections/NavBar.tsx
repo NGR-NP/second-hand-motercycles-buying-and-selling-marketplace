@@ -6,7 +6,7 @@ const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-      <nav className="fixed top-0 right-0 left-0 z-50 bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="fixed top-0 right-0 left-0 z-50 bg-gradient-to-r from-white3 via-white2 to-white3 dark:from-black3 darK:via-red4 dark:to-black3 dark:bg-slate-600">
         <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-screen-xl">
           <Link href="https://flowbite.com/" className="flex items-center">
             <img
@@ -21,7 +21,6 @@ const NavBar = () => {
           <div className="flex md:order-2">
             <button
               type="button"
-
               onClick={() => setShowMenu((showMenu) => !showMenu)}
               className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
             >
@@ -113,7 +112,7 @@ const NavBar = () => {
                 placeholder="Search..."
               />
             </div>
-            <ul className="flex flex-col p-4 mt-4 font-medium bg-gray-50 rounded-lg border border-gray-100 md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col p-4 mt-4 font-medium bg-transparent rounded-lg border md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-transparent dark:border-gray-700">
               <li>
                 <Link
                   href="#"
