@@ -1,9 +1,9 @@
+import Footer from "@/sections/Footer";
 import HeroSection from "@/sections/HeroSection";
 import InspireSection from "@/sections/InspireSection";
 import NavBar from "@/sections/NavBar";
 import PickYourRideSection from "@/sections/PickYourRideSection";
 import ShopByPrice from "@/sections/ShopByPrice";
-import Slider from "@/sections/Slider";
 import TheMostSearchBicks from "@/sections/TheMostSearchBicks";
 
 export default function Home() {
@@ -16,8 +16,8 @@ export default function Home() {
         <InspireSection />
         <PickYourRideSection />
         <TheMostSearchBicks />
-        <Slider />
       </main>
+      <Footer />
     </>
   );
 }

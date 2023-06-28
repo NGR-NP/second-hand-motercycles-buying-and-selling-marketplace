@@ -6,23 +6,32 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 import Link from "next/link";
 import AppLogo from "@/components/logo/AppLogo";
-type User = {
-  email: string;
-  password: string;
-  rememberMe: boolean;
-};
+import { useLoginMutation } from "@/redux/auth/authApiSlice";
+import { useAppDispatch } from "@/redux/app/ReduxHooks";
+
 const Login = () => {
+  const dispatch = useAppDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
+  const [login, { isLoading, isSuccess, isError, error, status }] =
+    useLoginMutation();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<User>();
-  const onSubmit: SubmitHandler<User> = (data) => {
-    reset();
+  } = useForm<Login>();
+  const onSubmit: SubmitHandler<Login> = async (data) => {
     console.log("submit", data);
+    const { email, password, rememberMe } = data;
+    try {
+      const res = await login({ email, password, rememberMe }).unwrap();
+      dispatch(res.data);
+      reset();
+    } catch (error) {
+      console.log(error);
+    }
+    reset();
   };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -42,13 +51,21 @@ const Login = () => {
                     : { border: "none" }
                 }
                 {...register("email", {
-                  required: true,
-                  pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
+                  required: {
+                    value: true,
+                    message: "enter your password!!",
+                  },
+                  pattern: {
+                    value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
+                    message: "invaild email format!!",
+                  },
                 })}
               />
               <i>Email</i>
-              {errors?.email?.type === "required" && (
-                <div className={styles.requiredMesage}>email is required</div>
+              {errors?.email && (
+                <div className={styles.requiredMesage}>
+                  {errors.email.message}
+                </div>
               )}
             </div>
 
@@ -63,15 +80,30 @@ const Login = () => {
                 className={styles.inputPassword}
                 type={showPassword ? "text" : "password"}
                 {...register("password", {
-                  required: true,
-                  pattern:
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
+                  required: {
+                    value: true,
+                    message: "enter your password!!",
+                  },
+                  minLength: {
+                    value: 8,
+                    message: "At least 8 characters required",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message: "more then 50 characters only allowed!!",
+                  },
+                  pattern: {
+                    value:
+                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
+                    message:
+                      "Password must contain at least one NUMBER, one CAPITAL case Letter, one lower case letter, and one special character",
+                  },
                 })}
               />
               <i>Password</i>
-              {errors?.password?.type === "required" && (
+              {errors?.password && (
                 <div className={styles.requiredMesage}>
-                  password is required
+                  {errors.password.message}
                 </div>
               )}
 

@@ -14,6 +14,7 @@ const Slider = () => {
     "/images/bikes/ktm200-01.jpg",
     "/images/bikes/ktm200.jpg",
   ];
+
   return (
     <div className={styles.sliderMain}>
       <div>
