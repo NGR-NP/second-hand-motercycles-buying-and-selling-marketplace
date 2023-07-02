@@ -1,4 +1,4 @@
-import UserHeader from "@/sections/header/userHeader/UserHeader";
+import { UserHeader } from "@/sections/header/userHeader/UserHeader";
 
 export const metadata = {
   title: "Create Next App",

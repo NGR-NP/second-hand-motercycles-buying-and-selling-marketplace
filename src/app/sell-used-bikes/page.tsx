@@ -93,6 +93,7 @@ const Page = () => {
                 required
               ></textarea>
             </div>
+
             <div className="grid md:grid-cols-2 md:gap-6">
               <div className="relative z-0 w-full mb-6">
                 <select className="text-slate-950 cursor-pointer rounded-md block py-2.5 px-3 outline-none">
