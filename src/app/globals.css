@@ -10,15 +10,20 @@
 }
 
 .hideScroollbar::-webkit-scrollbar {
-  width: 10px;
+  display: none;
+}
+
+.hideScroollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #888888 #f0f0f0;
 }
 
 .hideScroollbar::-webkit-scrollbar-track {
-  background-color: darkgrey;
+  background-color: #f0f0f0;
 }
 
 .hideScroollbar::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #888888;
 }
 
 html,
@@ -36,8 +41,9 @@ body {
   --pharlap: hsl(7, 19%, 53%);
   --falcon: hsl(323, 11%, 47%);
 
-  --red1: hsl(16, 84%, 73%);
-  --red2: hsl(11, 66%, 67%);
+  --red1: hsl(0, 84%, 73%);
+  --red2: hsl(0, 66%, 67%);
+  --red02: hsl(0, 67%, 62%);
   --red3: hsl(354, 71%, 41%);
   --red4: hsl(353, 76%, 40%);
   --red5: hsl(353, 59%, 36%);
