@@ -1,0 +1,54 @@
+.sec {
+  background-color: var(--clr-primary-300);
+  color: var(--clr-neutral-100);
+  padding: 1rem 2rem;
+  height: 50vh;
+  position: relative;
+  width: 100vw;
+}
+.sec::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% - 91px);
+  left: 0;
+  right: 0;
+  height: 143px;
+  background-image: url(/images/design/bg-texture-header-white-1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cont {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.titleCont {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+.descCont {
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms ease-in-out;
+}
+.button p {
+  background-color: hsl(var(--clr-secondary-hsl-200));
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border: 1px solid white;
+  transition: all 200ms ease-in-out;
+  border-radius: 0.3rem;
+}
+.button p:hover {
+  background-color: transparent;
+  border: 1px solid hsl(var(--clr-secondary-hsl-100), 0.8);
+}

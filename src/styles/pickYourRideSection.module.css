@@ -1,0 +1,25 @@
+.ul {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+}
+.li {
+  background-color: var(--black4);
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0px 1px 14px #00000070;
+}
+.li:hover {
+  border-radius: 1rem;
+  background-color: var(--black3);
+  box-shadow: 0px 1px 14px #000000c2;
+}
+.logo {
+  margin: 1rem;
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}

@@ -1,0 +1,75 @@
+.header {
+  padding: 1rem;
+  background-color: #ffff;
+  position: relative;
+  backface-visibility: hidden;
+  z-index: 0;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: calc(100% - 40px);
+  left: 0;
+  right: 0;
+  height: 89px;
+  background-image: url(/images/design/bg-texture-header-white.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+.main {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: auto;
+}
+.navContainer .logoContainer .contactContainer {
+  flex: 1;
+}
+.navContainer {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+.navLinksList {
+  /* padding: 1px; */
+}
+.handburgerMenuButton {
+  display: none;
+}
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.logo {
+  margin-top: 8px;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 1rem;
+}
+.powredByText {
+  margin: 8px;
+}
+.contactContainer {
+  display: flex;
+  align-items: center;
+}
+.contactGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 1rem;
+}
+.phoneNumber {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.socialMediaLink {
+  display: flex;
+  gap: 0.8rem;
+}
