@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -6,15 +7,17 @@ const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-      <nav className="fixed top-0 right-0 left-0 z-50 bg-gradient-to-r from-white3 via-white2 to-white3 dark:from-black3 darK:via-red4 dark:to-black3 dark:bg-slate-600">
+      <nav className="fixed top-0 right-0 left-0 z-50 bg-gradient-to-r from-white3 via-white2 to-white3">
         <div className="flex flex-wrap justify-between items-center p-4 mx-auto max-w-screen-xl">
-          <Link href="https://flowbite.com/" className="flex items-center">
-            <img
+          <Link href="/" className="flex items-center">
+            <Image
+              width={100}
+              height={200}
               src="/logos/MoterCycle.svg"
-              className="mr-3 h-8"
+              className="mr-3 h-8 w-[50px]"
               alt="Flowbite Logo"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap">
               KBBTY
             </span>
           </Link>
@@ -22,7 +25,7 @@ const NavBar = () => {
             <button
               type="button"
               onClick={() => setShowMenu((showMenu) => !showMenu)}
-              className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+              className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
             >
               <svg
                 className="w-5 h-5"
@@ -59,7 +62,7 @@ const NavBar = () => {
               <input
                 type="text"
                 id="search-navbar"
-                className="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 d"
                 placeholder="Search..."
               />
             </div>
@@ -108,15 +111,15 @@ const NavBar = () => {
               </div>
               <input
                 type="text"
-                className="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 d"
                 placeholder="Search..."
               />
             </div>
-            <ul className="flex flex-col p-4 mt-4 font-medium bg-transparent rounded-lg border md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-transparent dark:border-gray-700">
+            <ul className="flex flex-col p-4 mt-4 font-medium bg-transparent rounded-lg border md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0">
               <li>
                 <Link
                   href="#"
-                  className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  className="block py-2 pr-4 pl-3 bg-blue-700 rounded text-white1 md:bg-transparent md:text-blue-700 md:p-0"
                   aria-current="page"
                 >
                   Home
@@ -125,7 +128,7 @@ const NavBar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 pr-4 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  className="block py-2 pr-4 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 :"
                 >
                   About
                 </Link>
@@ -133,7 +136,7 @@ const NavBar = () => {
               <li>
                 <Link
                   href="#"
-                  className="block py-2 pr-4 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  className="block py-2 pr-4 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
                 >
                   Services
                 </Link>

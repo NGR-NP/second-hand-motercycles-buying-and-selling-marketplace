@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "@/styles/slider.module.css";
 import Carousel from "@/components/slider/Carousel";
+import Image from "next/image";
 const Slider = () => {
   const imgs = [
     "/images/bikes/bike-01.jpg",
@@ -20,7 +21,16 @@ const Slider = () => {
       <div>
         <Carousel>
           {imgs.map((img, idx) => {
-            return <img key={idx} width="100%" src={img} />;
+            return (
+              <Image
+                alt="img"
+                height={400}
+                key={idx}
+                width={500}
+                className="w-full h-auto"
+                src={img}
+              />
+            );
           })}
         </Carousel>
       </div>

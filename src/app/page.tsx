@@ -5,6 +5,7 @@ import NavBar from "@/sections/NavBar";
 import PickYourRideSection from "@/sections/PickYourRideSection";
 import ShopByPrice from "@/sections/ShopByPrice";
 import TheMostSearchBicks from "@/sections/TheMostSearchBicks";
+import ElectricBike from "@/sections/home/ElectricBike";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <InspireSection />
         <PickYourRideSection />
         <TheMostSearchBicks />
+        <ElectricBike />
       </main>
       <Footer />
     </>
