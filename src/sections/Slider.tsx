@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "@/styles/slider.module.css";
 import Carousel from "@/components/slider/Carousel";
-import Image from "next/image";
 const Slider = () => {
   const imgs = [
     "/images/bikes/bike-01.jpg",

@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
 
+import NavDashboard from "./dashboardNav/NavDashboard";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -14,10 +17,13 @@ export default function AdminLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+
+
+      <body className={`${inter.className} bg-[#F9F8FA] py-10`}>
+        <NavDashboard />
+        {children}</body>
     </html>
   );
 }
-{
-  /* // suppressHydrationWarning={true} */
-}
+
+
