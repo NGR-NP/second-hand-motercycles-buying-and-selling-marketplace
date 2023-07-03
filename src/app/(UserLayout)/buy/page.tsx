@@ -74,7 +74,7 @@ const BuyPage = () => {
                         <p>Rs 1.5 Lakh</p>
                       </div>
                     </div>
-                    <div className={``}>
+                    <div className={`lg: ${ngClass.lg} max-sm: ${ngClass.lg} md:static md:text-black3`}>
                       {
                         <MdOutlineFavoriteBorder className="w-5 h-5 font-bold" />
                       }

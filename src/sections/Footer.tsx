@@ -102,6 +102,10 @@ const Footer = () => {
                   {" "}
                   About{" "}
                 </Link>
+                <Link className="hover:opacity-75" href="/profile">
+                  {" "}
+                  Profile{" "}
+                </Link>
                 <Link className="hover:opacity-75" href="#">
                   {" "}
                   Meet the Team{" "}
