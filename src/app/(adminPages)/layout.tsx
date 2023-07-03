@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
+
 import NavDashboard from "./dashboardNav/NavDashboard";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,9 @@ export default function AdminLayout({
   return (
     <html lang="en">
 
+
       <body className={inter.className}>
+        <NavDashboard />
         {children}</body>
     </html>
   );
