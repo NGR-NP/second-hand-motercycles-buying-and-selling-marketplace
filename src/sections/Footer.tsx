@@ -99,24 +99,17 @@ const Footer = () => {
               <p className="font-medium">Company</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
                 <Link className="hover:opacity-75" href="/about">
-                  {" "}
-                  About{" "}
+                  About
                 </Link>
-                <Link className="hover:opacity-75" href="/profile">
-                  {" "}
-                  Profile{" "}
+
+                <Link className="hover:opacity-75" href="#">
+                  Meet the Team
                 </Link>
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  Meet the Team{" "}
+                  History
                 </Link>
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  History{" "}
-                </Link>
-                <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  Careers{" "}
+                  Careers
                 </Link>
               </nav>
             </div>
@@ -124,20 +117,19 @@ const Footer = () => {
               <p className="font-medium">Services</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
                 <Link className="hover:opacity-75" href="/buy">
-                  {" "}
-                  Buying{" "}
+                  Buying
                 </Link>
                 <Link className="hover:opacity-75" href="/sell">
-                  {" "}
-                  Selling{" "}
+                  Selling
                 </Link>
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  Vehicle Registration{" "}
+                  Vehicle Registration
                 </Link>
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  insurance{" "}
+                  insurance
+                </Link>
+                <Link className="hover:opacity-75" href="/dashboard">
+                  Dashboard
                 </Link>
               </nav>
             </div>
@@ -145,24 +137,22 @@ const Footer = () => {
               <p className="font-medium">Helpful Links</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
                 <Link className="hover:opacity-75" href="/contact">
-                  {" "}
-                  Contact{" "}
+                  Contact
                 </Link>
                 <Link className="hover:opacity-75" href="/">
-                  {" "}
-                  Home{" "}
+                  Home
                 </Link>
                 <Link className="hover:opacity-75" href="/login">
-                  {" "}
-                  Login{" "}
+                  Login
                 </Link>
                 <Link className="hover:opacity-75" href="/register">
-                  {" "}
-                  Register{" "}
+                  Register
+                </Link>
+                <Link className="hover:opacity-75" href="/profile">
+                  Profile
                 </Link>
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  FAQs{" "}
+                  FAQs
                 </Link>
               </nav>
             </div>
@@ -170,20 +160,16 @@ const Footer = () => {
               <p className="font-medium">Legal</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  Privacy Policy{" "}
+                  Privacy Policy
                 </Link>
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  Terms &amp; Conditions{" "}
+                  Terms &amp; Conditions
                 </Link>
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  Returns Policy{" "}
+                  Returns Policy
                 </Link>
                 <Link className="hover:opacity-75" href="#">
-                  {" "}
-                  Accessibility{" "}
+                  Accessibility
                 </Link>
               </nav>
             </div>

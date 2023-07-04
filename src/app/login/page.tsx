@@ -31,6 +31,8 @@ const Login = () => {
       firstName: "tej",
       lastName: "karki",
       email,
+      number: 111,
+      role: "admin",
       token: "hjgjhgjyghgjygf56656i76754iturdfgfgjjhgncv",
     };
     if (rememberMe) {
@@ -40,7 +42,7 @@ const Login = () => {
       localStorage.setItem("rememberMe", "false");
       sessionStorage.setItem("auth", JSON.stringify(datas));
     }
-    // 
+    //
     try {
       const res = await login({ email, password, rememberMe }).unwrap();
       dispatch(setCredentials(res.data));
@@ -123,12 +125,12 @@ const Login = () => {
               <div className={styles.PasswordVisibleIcons}>
                 {showPassword ? (
                   <BiHide
-                    className="cursor-pointer"
+                    className="cursor-pointer text-black1"
                     onClick={handleClickShowPassword}
                   />
                 ) : (
                   <BiShow
-                    className="cursor-pointer"
+                    className="cursor-pointer text-black1"
                     onClick={handleClickShowPassword}
                   />
                 )}
