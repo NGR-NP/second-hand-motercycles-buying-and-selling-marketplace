@@ -23,9 +23,9 @@ const Slider = () => {
             return (
               <img
                 alt="img"
+                key={idx}
                 height={400}
                 width={500}
-                key={idx}
                 className="w-full h-auto"
                 src={img}
               />
