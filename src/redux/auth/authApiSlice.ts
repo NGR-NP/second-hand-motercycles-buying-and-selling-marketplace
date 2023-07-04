@@ -2,8 +2,8 @@ import { apiSlice } from "../app/api";
 export const loginAuthApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
-      query: (credentials: any) => ({
-        url: "/auth/login",
+      query: (credentials:LoginType) => ({
+        url: "/user/login",
         method: "POST",
         body: { ...credentials },
       }),
@@ -12,3 +12,17 @@ export const loginAuthApiSlice = apiSlice.injectEndpoints({
 });
 
 export const { useLoginMutation } = loginAuthApiSlice;
+
+export const registerAuthSlice = apiSlice.injectEndpoints({
+  endpoints: (builder) => ({
+    register: builder.mutation({
+      query: (credentials: RegisterType) => ({
+        url: "/user/signup",
+        method: "POST",
+        body: { ...credentials },
+      }),
+    }),
+  }),
+});
+
+export const { useRegisterMutation } = registerAuthSlice;

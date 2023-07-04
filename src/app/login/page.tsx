@@ -8,6 +8,7 @@ import Link from "next/link";
 import AppLogo from "@/components/logo/AppLogo";
 import { useLoginMutation } from "@/redux/auth/authApiSlice";
 import { useAppDispatch } from "@/redux/app/ReduxHooks";
+import { setCredentials } from "@/redux/auth/authSlice";
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -20,13 +21,29 @@ const Login = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<Login>();
-  const onSubmit: SubmitHandler<Login> = async (data) => {
+  } = useForm<LoginType>();
+  const onSubmit: SubmitHandler<LoginType> = async (data) => {
     console.log("submit", data);
     const { email, password, rememberMe } = data;
+
+    // testing
+    const datas: LoggedInUserData = {
+      firstName: "tej",
+      lastName: "karki",
+      email,
+      token: "hjgjhgjyghgjygf56656i76754iturdfgfgjjhgncv",
+    };
+    if (rememberMe) {
+      localStorage.setItem("rememberMe", "true");
+      dispatch(setCredentials(datas));
+    } else {
+      localStorage.setItem("rememberMe", "false");
+      sessionStorage.setItem("auth", JSON.stringify(datas));
+    }
+    // 
     try {
       const res = await login({ email, password, rememberMe }).unwrap();
-      dispatch(res.data);
+      dispatch(setCredentials(res.data));
       reset();
     } catch (error) {
       console.log(error);
@@ -37,13 +54,13 @@ const Login = () => {
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   return (
-    <section className={styles.sec}>
+    <section className={`${styles.sec}`}>
       <div className={styles.cont}>
-        <div className={styles.content}>
+        <div className={`${styles.content} w-full max-sm:w-10/12`}>
           <AppLogo />
           <h2>Login</h2>
           <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-            <div className={styles.inputBox}>
+            <div className={`${styles.inputBox}`}>
               <input
                 style={
                   errors.email
@@ -53,7 +70,7 @@ const Login = () => {
                 {...register("email", {
                   required: {
                     value: true,
-                    message: "enter your password!!",
+                    message: "enter your email !!",
                   },
                   pattern: {
                     value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
@@ -92,12 +109,8 @@ const Login = () => {
                     value: 50,
                     message: "more then 50 characters only allowed!!",
                   },
-                  pattern: {
-                    value:
-                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
-                    message:
-                      "Password must contain at least one NUMBER, one CAPITAL case Letter, one lower case letter, and one special character",
-                  },
+                  pattern:
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
                 })}
               />
               <i>Password</i>

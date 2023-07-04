@@ -1,7 +1,11 @@
 import React from "react";
 
 const SellerForm = () => {
-  return <div>SellerForm</div>;
+  return (
+    <section>
+      <p>sell</p>
+    </section>
+  );
 };
 
 export default SellerForm;

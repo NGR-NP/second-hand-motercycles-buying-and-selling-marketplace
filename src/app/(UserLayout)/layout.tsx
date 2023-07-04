@@ -1,4 +1,5 @@
-import { UserHeader } from "@/sections/header/userHeader/UserHeader";
+import { Providers } from "@/redux/app/Provider";
+import NavBar from "@/sections/NavBar";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +14,11 @@ export default function UserLayout({
   return (
     <html lang="en">
       <body>
-        <UserHeader /> {children}
+        <Providers>
+          <NavBar />
+
+          {children}
+        </Providers>
       </body>
     </html>
   );

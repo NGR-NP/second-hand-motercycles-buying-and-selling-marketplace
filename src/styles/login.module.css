@@ -12,7 +12,6 @@
   align-items: center;
   gap: 2px;
   flex-wrap: wrap;
-  overflow: hidden;
   background-image: url(/images/background/bg-hero-section.jpg);
   background-position: center;
   background-repeat: space;
@@ -22,7 +21,7 @@
 .cont {
   position: absolute;
   max-width: 500px;
-  width: 500px;
+  width: 100%;
   background: #222222de;
   z-index: 1000;
   display: flex;
@@ -34,7 +33,6 @@
 }
 .content {
   position: relative;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

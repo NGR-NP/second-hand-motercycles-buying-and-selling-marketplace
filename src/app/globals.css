@@ -214,14 +214,14 @@ body {
   background-color: #f6f6f6;
   color: rgb(12, 12, 12);
   position: absolute;
-  bottom: -6rem;
+  bottom: -10rem;
   left: 0;
   right: 28%;
   padding: 1rem 2rem 2rem;
 }
 .page-not-found-closeIcon {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   cursor: pointer;
 }
 

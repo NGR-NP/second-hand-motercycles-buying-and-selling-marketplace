@@ -5,23 +5,38 @@ import styles from "@/styles/register.module.css";
 import AppLogo from "@/components/logo/AppLogo";
 import { BiShow, BiHide } from "react-icons/bi";
 import Link from "next/link";
-type User = {
-  firstName: string;
-  lastName?: string;
-  email: string;
-  password: string;
-};
-const Register = () => {
-  const [showPassword, setShowPassword] = useState(false);
+import { useAppDispatch } from "@/redux/app/ReduxHooks";
+import { useRegisterMutation } from "@/redux/auth/authApiSlice";
 
+const Register = () => {
+  const dispatch = useAppDispatch();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [login, { isLoading, isSuccess, isError, error, status }] =
+    useRegisterMutation();
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isLoading, isDirty },
-  } = useForm<User>();
-  const onSubmit: SubmitHandler<User> = (data: User) => {
-    console.log(data);
+    formState: { errors, isDirty },
+  } = useForm<RegisterType>();
+  const onSubmit: SubmitHandler<RegisterType> = async (data: RegisterType) => {
+    console.log("submit", data);
+    const { email, password, firstName, lastName, number } = data;
+    try {
+      const res = await login({
+        email,
+        password,
+        firstName,
+        lastName,
+        number,
+      }).unwrap();
+      dispatch(res.data);
+      reset();
+    } catch (error) {
+      console.log(error);
+    }
+    reset();
   };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -29,7 +44,7 @@ const Register = () => {
   return (
     <section className={styles.sec}>
       <div className={styles.cont}>
-        <div className={styles.content}>
+        <div className={`${styles.content} w-full max-sm:w-10/12`}>
           <AppLogo />
           <h2>Register</h2>
 
@@ -41,7 +56,12 @@ const Register = () => {
                     ? { border: "1px solid red" }
                     : { border: "none" }
                 }
-                {...register("firstName", { required: true })}
+                {...register("firstName", {
+                  required: {
+                    value: true,
+                    message: "First name is Required!!",
+                  },
+                })}
               />
               <i>First Name</i>
               {errors?.firstName?.type === "required" && (
@@ -58,7 +78,12 @@ const Register = () => {
                     ? { border: "1px solid red" }
                     : { border: "none" }
                 }
-                {...register("lastName", { required: true })}
+                {...register("lastName", {
+                  required: {
+                    value: true,
+                    message: "Last name is Required!!",
+                  },
+                })}
               />
               <i>Last Name</i>
               <div className={styles.requiredMesage}>
@@ -74,18 +99,62 @@ const Register = () => {
                     : { border: "none" }
                 }
                 {...register("email", {
-                  required: true,
-                  pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
+                  required: {
+                    value: true,
+                    message: "Email is Required!!",
+                  },
+                  pattern: {
+                    value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
+                    message: "invaild email format!!",
+                  },
                 })}
               />
               <i>Email</i>
-              {errors?.email?.type === "required" && (
-                <div className={styles.requiredMesage}>email is required</div>
+              {errors?.email && (
+                <div className={styles.requiredMesage}>
+                  {errors.email.message}
+                </div>
+              )}
+            </div>
+            <div className={styles.inputBox}>
+              <input
+                placeholder="98********"
+                type="tel"
+                style={
+                  errors.number
+                    ? { border: "1px solid red" }
+                    : { border: "none" }
+                }
+                {...register("number", {
+                  required: {
+                    value: true,
+                    message: "Phone number is Required!!",
+                  },
+                  minLength: {
+                    value: 10,
+                    message: "invalid number",
+                  },
+                  maxLength: {
+                    value: 14,
+                    message: "invalid number length",
+                  },
+                  pattern: {
+                    value: /^(\+?[0-9]{1,4})?[-\s]?[7-9]{1}\d{8}$/,
+                    message: "Invalid number format",
+                  },
+                })}
+              />
+              <i>Number</i>
+              {errors?.number && (
+                <div className={styles.requiredMesage}>
+                  {errors.number.message}
+                </div>
               )}
             </div>
 
             <div className={styles.inputBox}>
               <input
+                placeholder="************"
                 style={
                   errors.password
                     ? { border: "1px solid red" }
@@ -94,15 +163,30 @@ const Register = () => {
                 className={styles.inputPassword}
                 type={showPassword ? "text" : "password"}
                 {...register("password", {
-                  required: true,
-                  pattern:
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
+                  required: {
+                    value: true,
+                    message: "enter your password!!",
+                  },
+                  minLength: {
+                    value: 8,
+                    message: "At least 8 characters required",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message: "more then 50 characters only allowed!!",
+                  },
+                  pattern: {
+                    value:
+                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
+                    message:
+                      "Password must contain at least one NUMBER, one CAPITAL case Letter, one lower case letter, and one special character",
+                  },
                 })}
               />
               <i>Password</i>
-              {errors?.password?.type === "required" && (
+              {errors?.password && (
                 <div className={styles.requiredMesage}>
-                  password is required
+                  {errors.password.message}
                 </div>
               )}
 
