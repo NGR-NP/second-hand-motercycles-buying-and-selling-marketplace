@@ -7,10 +7,15 @@ const Page = () => {
   const { data } = useSingleProductQuery({
     id: 1,
   });
+
   const datas: SingleProductResponseTypes = data;
+
+  const ButtonStyles =
+    "border text-black border-blue-200 rounded-xl p-2 text-xs bg-blue-50 hover:bg-blue-200";
+
   return (
-    <main className="mt-16">
-      <div className="flex">
+    <main className="mt-16 max-w-screen-xl mx-auto">
+      <div className="flex justify-center">
         <Slider />
         <div className="mt-16 flex border border-gray-400 rounded-lg">
           <div className="flex flex-col p-4 space-y-4">
@@ -39,12 +44,20 @@ const Page = () => {
             <div>Buy most effective services for used bikes</div>
           </div>
         </div>
-        <div className="">
-          <button>OVERWIEW</button>
-          <button>SPECS & FEATURES</button>
-          <button>CAR QUALITY CHECKS</button>
-          <button>EMI CALC</button>
-          <button>SIMILAR CARS</button>
+      </div>
+      <div className="">
+        <div className="space-x-2 mt-16 flex justify-center">
+          <button className={`${ButtonStyles}`}>OVERWIEW</button>
+          <button className={`${ButtonStyles}`}>SPECS & FEATURES</button>
+          <button className={`${ButtonStyles}`}>BIKE QUALITY CHECKS</button>
+          <button className={`${ButtonStyles}`}>EMI CALC</button>
+          <button className={`${ButtonStyles}`}>SIMILAR BIKES</button>
+        </div>
+        <div className="flex justify-center font-bold text-xl mt-8 font-sans">
+          <h1>Bikes overview</h1>
+          <div>
+            
+          </div>
         </div>
       </div>
     </main>
