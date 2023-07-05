@@ -22,10 +22,10 @@ const Slider = () => {
         <Carousel>
           {imgs.map((img, idx) => {
             return (
-              <img
+              <Image
                 alt="img"
                 key={idx}
-                height={400}
+                height={500}
                 width={500}
                 className="w-full h-auto"
                 src={img}

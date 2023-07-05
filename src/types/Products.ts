@@ -1,19 +1,24 @@
 type MinProductListType = {
-  createdAt: string;
   name: string;
-  image: string;
   company: string;
-  year: string;
+  boughtYears: number;
   price: number;
   description: string;
-  shortDescription: string;
   engineType: string;
-  model: string;
-  userId: string;
+  modal: string;
+  images: JSON;
+  color: string;
+  shortDescription: string;
+  userId: number;
+  kmDriven: number;
+  ownerShip: number;
+  engineDisplacement: number;
+  yearOfManufracture: number;
+  milage: string;
+  wheelSize: number;
   isSold: boolean;
   isDeleteByUser: boolean;
   isNegotiable: boolean;
-  id: string;
 };
 type SingleProductResponseTypes = {
   createdAt: string;
