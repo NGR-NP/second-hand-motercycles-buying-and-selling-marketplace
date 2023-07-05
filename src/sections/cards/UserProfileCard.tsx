@@ -5,15 +5,15 @@ import VerifiedBadgedSvg from "@/components/svg/VerifiedBadgeSvg";
 import PhoneOut from "@/components/svg/PhoneOutSvg";
 import EmailSvg from "@/components/svg/EmailSvg";
 import PhoneSvg from "@/components/svg/PhoneSvg";
+import Image from "next/image";
 
-const UserProfileCard = () => {
+const UserProfileCard = ({ datas, loading }: any) => {
   const dispatch = useAppDispatch();
-  const role = useAppSelector(selectCurrentRole)
-  let loading = false;
+  const role = useAppSelector(selectCurrentRole);
   const handleLogout = (e: any) => {
     dispatch(logout());
   };
-  
+
   let id = 1;
   const data = {
     id: 1,
@@ -28,7 +28,9 @@ const UserProfileCard = () => {
   return (
     <div className="flex relative flex-col mx-2 w-96 min-w-0 break-words bg-clip-border rounded-2xl border-0 shadow-xl bg-slate-50">
       <div className="relative mb-16">
-        <img
+        <Image
+          width={200}
+          height={200}
           className="object-cover w-full h-40 rounded-t-2xl"
           src="/images/reaction/shock.jpeg"
           alt="profile cover image"
@@ -38,7 +40,9 @@ const UserProfileCard = () => {
           <div className="px-3 max-w-full flex-0">
             <div className="relative w-24">
               <Link href="#">
-                <img
+                <Image
+                  width={200}
+                  height={200}
                   className="object-cover z-10 w-24 h-24 rounded-full border-2 border-white border-solid"
                   src={data?.image || "/images/reaction/shock.jpeg"}
                   alt="profile image"

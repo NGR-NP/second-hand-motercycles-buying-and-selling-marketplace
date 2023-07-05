@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "@/styles/slider.module.css";
 import Carousel from "@/components/slider/Carousel";
+import Image from "next/image";
 const Slider = () => {
   const imgs = [
     "/images/bikes/bike-01.jpg",
@@ -21,7 +22,7 @@ const Slider = () => {
         <Carousel>
           {imgs.map((img, idx) => {
             return (
-              <img
+              <Image
                 alt="img"
                 key={idx}
                 height={400}

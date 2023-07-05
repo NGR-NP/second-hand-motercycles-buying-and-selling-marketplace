@@ -21,3 +21,6 @@ type RegisterType = {
   role?: "admin" | "user";
   isVerified?: boolean;
 };
+type VerifyOtpType = {
+  otp: string;
+};

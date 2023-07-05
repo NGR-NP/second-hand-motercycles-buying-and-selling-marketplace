@@ -1,5 +1,6 @@
 "use client";
 import UserPagination from "@/components/pagination/UserPagination";
+import Image from "next/image";
 import React, { useState } from "react";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 const SearchProduct = () => {
@@ -21,13 +22,18 @@ const SearchProduct = () => {
         </div>
         {data.map((data) => {
           return (
-            <div className="px-3 py-4 mx-3 my-4 rounded-lg shadow-md bg-white1 text-slate-800">
+            <div
+              key={data}
+              className="px-3 py-4 mx-3 my-4 rounded-lg shadow-md bg-white1 text-slate-800"
+            >
               <div className="flex gap-8">
                 <div className="">
-                  <img
+                  <Image
+                    alt="img"
+                    width={200}
+                    height={200}
                     className="object-cover w-64 h-36 rounded-md origin-center"
                     src={data}
-                    alt="img"
                   />
                 </div>
                 <div className="flex1">

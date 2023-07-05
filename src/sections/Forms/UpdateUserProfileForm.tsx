@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import EditDocSvg from "../../components/svg/EditDocSvg";
 import { useAppDispatch } from "@/redux/app/ReduxHooks";
 import LoadingCircleSvg from "@/components/svg/loading/LoadingCircleSvg";
+import Image from "next/image";
 
 const UpdateUserProfileForm = ({ data, refetch }: any) => {
   const [email, setEmail] = useState("");
@@ -16,9 +17,7 @@ const UpdateUserProfileForm = ({ data, refetch }: any) => {
     setImg(e.target.files[0]);
   };
   const isLoading = false;
-  const handleSubmit = (e:any) => {
-    
-  };
+  const handleSubmit = (e: any) => {};
   return (
     <div className="flex relative flex-col min-w-0 break-words bg-clip-border bg-white rounded-2xl border-0 shadow-xl">
       <div className="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
@@ -43,7 +42,10 @@ const UpdateUserProfileForm = ({ data, refetch }: any) => {
             >
               <div className="relative m-auto">
                 <div className="relative">
-                  <img
+                  <Image
+                    alt="img"
+                    width={200}
+                    height={200}
                     className="w-[30vmin] h-[30vmin] object-cover rounded-full"
                     src={
                       img
@@ -52,7 +54,6 @@ const UpdateUserProfileForm = ({ data, refetch }: any) => {
                         ? data?.image
                         : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
                     }
-                    alt=""
                   />
                 </div>
                 {!img && (

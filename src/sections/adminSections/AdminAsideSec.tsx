@@ -1,18 +1,19 @@
+import Image from "next/image";
 import React from "react";
 
 const AdminAsideSec = () => {
   return (
     <aside className="block overflow-y-auto fixed inset-y-0 flex-wrap justify-between items-center p-0 my-4 ml-4 w-auto antialiased bg-white rounded-2xl border-0 shadow-none transition-transform duration-200 -translate-x-full max-w-62 ease z-990 xl:left-0 xl:translate-x-0 xl:bg-transparent">
       <div className="h-19.5">
-        <i
-          className="hidden absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
-        ></i>
+        <i className="hidden absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"></i>
         <a
           className="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700"
           href="#"
           target="_blank"
         >
-          <img
+          <Image
+            width={200}
+            height={200}
             src="/images/reaction/shock.jpeg"
             className="inline max-w-full h-full max-h-8 transition-all duration-200 ease-nav-brand"
             alt="main_logo"

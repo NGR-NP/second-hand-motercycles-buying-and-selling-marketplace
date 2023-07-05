@@ -23,7 +23,7 @@ const UserProfileSection = () => {
         </div>
         <div className="flex-1 pr-9 w-full max-w-full max-lg:pr-0 shrink-0 lg:w-4/12 md:flex-0">
           <div className="flex justify-center items-center">
-            <UserProfileCard data={data?.user} loading={isFetching} />
+            <UserProfileCard datas={data?.user} loading={isFetching} />
           </div>
         </div>
       </div>

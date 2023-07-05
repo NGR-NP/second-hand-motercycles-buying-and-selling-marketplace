@@ -6,7 +6,7 @@ type MinProductListType = {
   description: string;
   engineType: string;
   modal: string;
-  images: JSON;
+  images: [] ;
   color: string;
   shortDescription: string;
   userId: number;

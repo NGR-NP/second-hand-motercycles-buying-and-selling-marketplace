@@ -35,15 +35,8 @@
     user-select: none;
   
   }
-  /* .group:hover img{
-    scale: 1.2;
-  }
-  .group:hover .textCont{
-    font-size: 2.5rem;
-  } */
   .group:hover :is(.layer, .img, .textCont) {
     border-radius: 10%;
-    
   }
   .group {
     position: relative;
@@ -64,7 +57,7 @@
     top: 40%;
     left: 35%;
     color: white;
-    font-size: 2rem;
+    font-size: 3vmin;
     font-weight: 900;
     z-index: 2;
     cursor: pointer;

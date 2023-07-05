@@ -2,12 +2,22 @@
 import AdminAsideSec from "@/sections/adminSections/AdminAsideSec";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 const AdminDashboard = () => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const openDialog = () => {
+    dialogRef?.current?.showModal();
+    console.log(dialogRef.current?.showModal);
+  };
+  const closeDialog = () => {
+    dialogRef?.current?.close();
+  };
+
   return (
     <div className="font-sans text-base antialiased font-normal bg-gray-50 leading-default text-slate-500">
       <AdminAsideSec />
-      <main className="relative h-full max-h-screen rounded-xl transition-all duration-200 md:ml-56 ease-soft-in-out xl:ml-68">
+      <main className="relative h-full max-h-screen rounded-xl transition-all duration-200 lg:ml-56 ease-soft-in-out xl:ml-68">
         <nav
           className="flex relative flex-wrap justify-between items-center px-0 py-2 mx-6 rounded-2xl shadow-none transition-all duration-250 ease-soft-in lg:flex-nowrap lg:justify-start"
           navbar-scroll="true"
@@ -98,7 +108,10 @@ const AdminDashboard = () => {
                       >
                         <div className="flex py-1">
                           <div className="my-auto">
-                            <img
+                            <Image
+                            alt="img"
+                            width={200}
+                            height={200}
                               src="../assets/img/team-2.jpg"
                               className="inline-flex justify-center items-center mr-4 w-9 max-w-none h-9 text-sm text-white rounded-xl"
                             />
@@ -124,7 +137,10 @@ const AdminDashboard = () => {
                       >
                         <div className="flex py-1">
                           <div className="my-auto">
-                            <img
+                          <Image
+                            alt="img"
+                            width={200}
+                            height={200}
                               src="../assets/img/small-logos/logo-spotify.svg"
                               className="inline-flex justify-center items-center mr-4 w-9 max-w-none h-9 text-sm text-white bg-gradient-to-tl from-gray-900 rounded-xl to-slate-800"
                             />

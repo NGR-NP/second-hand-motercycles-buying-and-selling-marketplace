@@ -2,7 +2,7 @@ import { apiSlice } from "../app/api";
 export const loginAuthApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
-      query: (credentials:LoginType) => ({
+      query: (credentials: LoginType) => ({
         url: "/user/login",
         method: "POST",
         body: { ...credentials },
@@ -24,5 +24,17 @@ export const registerAuthSlice = apiSlice.injectEndpoints({
     }),
   }),
 });
-
 export const { useRegisterMutation } = registerAuthSlice;
+
+export const VerifyOTPAuthSlice = apiSlice.injectEndpoints({
+  endpoints: (builder) => ({
+    verifyOTP: builder.mutation({
+      query: (credentials: any) => ({
+        url: "/verify-email",
+        method: "POST",
+        body: { ...credentials },
+      }),
+    }),
+  }),
+});
+export const { useVerifyOTPMutation } = VerifyOTPAuthSlice;
