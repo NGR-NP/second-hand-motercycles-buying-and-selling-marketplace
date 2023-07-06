@@ -26,9 +26,11 @@ const BuyPage = () => {
       });
     }
   }, [data]);
+  
   useEffect(() => {
     pagination();
   }, [pagination]);
+
   const ngClass = {
     lg: "absolute top-3 rignt-4 text-white1",
   };

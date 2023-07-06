@@ -22,14 +22,14 @@ const Register = () => {
   } = useForm<RegisterType>();
   const onSubmit: SubmitHandler<RegisterType> = async (data: RegisterType) => {
     console.log("submit", data);
-    const { email, password, firstName, lastName, number } = data;
+    const { email, password, firstName, lastName, phone } = data;
     try {
       const res = await login({
         email,
         password,
         firstName,
         lastName,
-        number,
+        phone,
       }).unwrap();
       dispatch(res.data);
       reset();
@@ -121,33 +121,33 @@ const Register = () => {
                 placeholder="98********"
                 type="tel"
                 style={
-                  errors.number
+                  errors.phone
                     ? { border: "1px solid red" }
                     : { border: "none" }
                 }
-                {...register("number", {
+                {...register("phone", {
                   required: {
                     value: true,
-                    message: "Phone number is Required!!",
+                    message: "Phone phone number is Required!!",
                   },
                   minLength: {
                     value: 10,
-                    message: "invalid number",
+                    message: "invalid phone number",
                   },
                   maxLength: {
                     value: 14,
-                    message: "invalid number length",
+                    message: "invalid phone number length",
                   },
                   pattern: {
                     value: /^(\+?[0-9]{1,4})?[-\s]?[7-9]{1}\d{8}$/,
-                    message: "Invalid number format",
+                    message: "Invalid phone number format",
                   },
                 })}
               />
-              <i>Number</i>
-              {errors?.number && (
+              <i>Phone Number</i>
+              {errors?.phone && (
                 <div className={styles.requiredMesage}>
-                  {errors.number.message}
+                  {errors.phone.message}
                 </div>
               )}
             </div>

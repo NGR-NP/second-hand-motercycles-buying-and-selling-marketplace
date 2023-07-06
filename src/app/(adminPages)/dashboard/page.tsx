@@ -2,17 +2,9 @@
 import AdminAsideSec from "@/sections/adminSections/AdminAsideSec";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import React from "react";
 
 const AdminDashboard = () => {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const openDialog = () => {
-    dialogRef?.current?.showModal();
-    console.log(dialogRef.current?.showModal);
-  };
-  const closeDialog = () => {
-    dialogRef?.current?.close();
-  };
 
   return (
     <div className="font-sans text-base antialiased font-normal bg-gray-50 leading-default text-slate-500">
@@ -109,10 +101,10 @@ const AdminDashboard = () => {
                         <div className="flex py-1">
                           <div className="my-auto">
                             <Image
-                            alt="img"
-                            width={200}
-                            height={200}
-                              src="../assets/img/team-2.jpg"
+                              alt="img"
+                              width={200}
+                              height={200}
+                              src={"/images/reaction/shock.jpeg"}
                               className="inline-flex justify-center items-center mr-4 w-9 max-w-none h-9 text-sm text-white rounded-xl"
                             />
                           </div>
@@ -137,11 +129,11 @@ const AdminDashboard = () => {
                       >
                         <div className="flex py-1">
                           <div className="my-auto">
-                          <Image
-                            alt="img"
-                            width={200}
-                            height={200}
-                              src="../assets/img/small-logos/logo-spotify.svg"
+                            <Image
+                              alt="img"
+                              width={200}
+                              height={200}
+                              src={"/images/reaction/shock.jpeg"}
                               className="inline-flex justify-center items-center mr-4 w-9 max-w-none h-9 text-sm text-white bg-gradient-to-tl from-gray-900 rounded-xl to-slate-800"
                             />
                           </div>
