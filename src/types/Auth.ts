@@ -8,7 +8,8 @@ type LoggedInUserData = {
   firstName: string;
   lastName: string;
   email: string;
-  number: number;
+  phone: number;
+  image: string;
   role: "admin" | "user";
   token: string;
 };
@@ -24,15 +25,12 @@ type RegisterType = {
 type VerifyOtpType = {
   otp: string;
 };
-type UserInfo =
-  | {
-      id: number;
-      image: string;
-      firstName: string;
-      lastName: string;
-      phone: number;
-      email: string;
-      number: number;
-      role: "admin" | "user";
-    }
-  | [];
+type UserInfo = {
+  id: number;
+  image: string;
+  firstName: string;
+  lastName: string;
+  phone: number;
+  email: string;
+  role: "admin" | "user";
+};

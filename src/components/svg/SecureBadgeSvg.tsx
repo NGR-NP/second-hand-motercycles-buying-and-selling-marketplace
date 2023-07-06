@@ -1,6 +1,6 @@
 import React from "react";
 
-const SecureBadgeSvg = ({color}) => {
+const SecureBadgeSvg = ({ color }: {color: string}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

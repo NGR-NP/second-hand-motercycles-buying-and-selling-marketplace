@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 
-const Page = () => {
+const SellUsedBike = () => {
   const [image, setImage] = useState(undefined);
   const handleUploadImg = (e: any) => {
-    // const img = e.target.file[0];
-    // setImage(img);
+    const img = e.target.files[0];
+    setImage(img);
     console.log(e.target);
   };
   return (
@@ -151,4 +151,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default SellUsedBike;

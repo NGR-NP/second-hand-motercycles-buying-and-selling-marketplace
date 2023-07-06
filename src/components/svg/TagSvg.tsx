@@ -1,6 +1,6 @@
 import React from "react";
 
-const TagSvg = ({ color }) => {
+const TagSvg = ({ style }: { style: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@ const TagSvg = ({ color }) => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={`w-6 h-6 ${color}`}
+      className={`${style ? style : "w-6 h-6"} `}
     >
       <path
         strokeLinecap="round"

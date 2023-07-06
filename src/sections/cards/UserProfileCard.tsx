@@ -50,7 +50,7 @@ const UserProfileCard = ({ datas, loading }: any) => {
               </Link>
               {data?.status === "true" && (
                 <div className="absolute bottom-0 right-2 text-white bg-green-500 rounded-full">
-                  <VerifiedBadgedSvg />
+                  <VerifiedBadgedSvg color="" />
                 </div>
               )}
             </div>

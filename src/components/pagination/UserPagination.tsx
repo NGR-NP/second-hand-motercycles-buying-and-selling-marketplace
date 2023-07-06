@@ -13,18 +13,17 @@ const UserPagination = ({
   setLimit,
   setPage,
 }: any) => {
-  console.log("datas", datas.page);
-  const start = (datas?.page - 1) * limit + 1 || 0;
-  const end = Math.min(datas?.page * limit, datas?.count) || 0;
+  const start = (datas?.currentPage - 1) * limit + 1 || 0;
+  const end = Math.min(datas?.currentPage * limit, datas?.count) || 0;
   const handlePage = (e: any, value: any) => {
     e.preventDefault();
     if (value === "next") {
-      if (datas?.totalPages > datas?.page) {
-        setPage(datas?.page + 1);
+      if (datas?.totalPages > datas?.currentPage) {
+        setPage(datas?.currentPage + 1);
       }
     } else {
-      if (datas?.page > 1) {
-        setPage(datas?.page - 1);
+      if (datas?.currentPage > 1) {
+        setPage(datas?.currentPage - 1);
       }
     }
   };
@@ -32,7 +31,7 @@ const UserPagination = ({
     const pageNumbers = [];
     const maxPageNumbers = 5;
     const totalPages = datas?.totalPages;
-    const currentPage = datas?.page;
+    const currentPage = datas?.currentPage;
     if (totalPages <= maxPageNumbers) {
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
@@ -88,7 +87,7 @@ const UserPagination = ({
               <div
                 onClick={(e) => handlePage(e, "prev")}
                 className={`${
-                  datas?.page <= 1
+                  datas?.currentPage <= 1
                     ? "cursor-not-allowed opacity-50"
                     : "cursor-pointer "
                 } inline-flex relative items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50`}
@@ -99,7 +98,7 @@ const UserPagination = ({
               <div
                 onClick={(e) => handlePage(e, "next")}
                 className={`${
-                  datas?.totalPages > datas?.page
+                  datas?.totalPages > datas?.currentPage
                     ? "cursor-pointer"
                     : "cursor-not-allowed opacity-50"
                 } inline-flex relative items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50`}
@@ -138,7 +137,9 @@ const UserPagination = ({
                   <div
                     onClick={(e) => handlePage(e, "prev")}
                     className={`${
-                      datas?.page <= 1 ? "cursor-not-allowed" : "cursor-pointer"
+                      datas?.currentPage <= 1
+                        ? "cursor-not-allowed"
+                        : "cursor-pointer"
                     } inline-flex relative items-center px-2 py-2 text-gray-400 rounded-l-md ring-1 ring-inset ring-gray-300  hover:bg-gray-50 focus:z-20 focus:outline-offset-0`}
                   >
                     <MdArrowLeft />
@@ -152,7 +153,7 @@ const UserPagination = ({
                         onClick={() => page !== "..." && setPage(page)}
                         aria-current="page"
                         className={`${
-                          datas?.page === page
+                          datas?.currentPage === page
                             ? " z-10  bg-orange-600 text-white  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                             : " text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50  focus:outline-offset-0"
                         } ${isFetching ? "cursor-wait" : "cursor-pointer"}
@@ -167,7 +168,7 @@ const UserPagination = ({
                   <div
                     onClick={(e) => handlePage(e, "next")}
                     className={`${
-                      datas?.totalPages > datas?.page
+                      datas?.totalPages > datas?.currentPage
                         ? "cursor-pointer"
                         : "cursor-not-allowed"
                     } inline-flex relative items-center px-2 py-2 text-gray-400 rounded-r-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0`}

@@ -1,6 +1,4 @@
-import React from "react";
-
-const BuildingOfficeSvg = ({color}) => {
+const CheckCircleSvg = ({ color }: {color: string}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,10 +11,9 @@ const BuildingOfficeSvg = ({color}) => {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"
+        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </svg>
   );
 };
-
-export default BuildingOfficeSvg;
+export default CheckCircleSvg;

@@ -13,14 +13,15 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setCredentials: (state, action: PayloadAction<LoggedInUserData>) => {
-      const { firstName, email, lastName, token, role, number } =
+      const { firstName, email, lastName, token, role, image, phone } =
         action.payload;
       state.auth = {
         firstName: firstName ?? state.auth?.firstName,
         lastName: lastName ?? state.auth?.lastName,
         email: email ?? state.auth?.email,
         role: role ?? state.auth?.role,
-        number: number ?? state.auth?.number,
+        phone: phone ?? state.auth?.phone,
+        image: image ?? state.auth?.image,
         token: token ?? state.auth?.token,
       };
     },
@@ -43,8 +44,11 @@ export const selectCurrentLastName = (state: { auth: AuthState }) =>
 
 export const selectCurrentRole = (state: { auth: AuthState }) =>
   state.auth.auth?.role;
-export const selectCurrentNumber = (state: { auth: AuthState }) =>
-  state.auth.auth?.number;
+export const selectCurrentPhone = (state: { auth: AuthState }) =>
+  state.auth.auth?.phone;
+
+export const selectCurrentImage = (state: { auth: AuthState }) =>
+  state.auth.auth?.image;
 
 export const selectCurrentToken = (state: { auth: AuthState }) =>
   state.auth.auth?.token;

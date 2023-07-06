@@ -1,19 +1,20 @@
 "use client";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import UserPagination from "@/components/pagination/UserPagination";
 import { AllUsersTableBody } from "@/components/Admin/users/AllUsersTableBody";
 import { useGetAllUsersQuery } from "@/redux/users/getAllUsersApiSlice";
 
 const AllUsersTableSec = ({ thdata }: any) => {
-  const [limit, setLimit] = useState("10");
-  const [page, setPage] = useState("1");
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
   const { data, isSuccess, isLoading, isFetching, refetch } =
     useGetAllUsersQuery({
       limit,
       page,
     });
+
   return (
-    <div className="mx-4 mt-4">
+    <div className="mx-4 mt-20">
       <div className="overflow-hidden w-full rounded-lg shadow-xs">
         {isFetching ? (
           <div className="bg-gray-100   h-[90vh] mb-2  max-md:h-[87.3vh] ">
@@ -35,11 +36,11 @@ const AllUsersTableSec = ({ thdata }: any) => {
               </thead>
 
               {isSuccess &&
-                data?.result?.map((data: any, idx: number) => {
+                data?.allUsers?.map((data: any, idx: number) => {
                   return (
                     <AllUsersTableBody
                       idx={idx}
-                      key={data?._id}
+                      key={data?.id}
                       dataMaped={data}
                       refetch={refetch}
                     />

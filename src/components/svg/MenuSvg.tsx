@@ -5,7 +5,6 @@ function MenuSvg() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
-      aria-idden="true"
       viewBox="0 0 20 20"
       className="w-6 h-6"
     >

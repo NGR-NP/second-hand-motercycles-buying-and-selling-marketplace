@@ -25,8 +25,8 @@ const BuyPage = () => {
         count: count,
       });
     }
-  }, [data]);
-  
+  }, [data, limit, page]);
+
   useEffect(() => {
     pagination();
   }, [pagination]);

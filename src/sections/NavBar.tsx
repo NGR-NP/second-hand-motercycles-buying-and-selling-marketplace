@@ -127,18 +127,18 @@ const NavBar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/dashboard"
                   className="block py-2 pr-4 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 :"
                 >
-                  About
+                  Dashboard
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/sell-used-bike"
                   className="block py-2 pr-4 pl-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
                 >
-                  Services
+                  sell
                 </Link>
               </li>
             </ul>

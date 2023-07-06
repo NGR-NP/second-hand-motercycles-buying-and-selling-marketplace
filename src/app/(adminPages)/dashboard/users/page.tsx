@@ -1,11 +1,11 @@
 import AllUsersTableSec from "@/sections/adminSections/User/AllUsersTableSec";
 import React from "react";
 
-const AllUsersTablePage = () => {
+const AllUserTablePage = () => {
   return (
-    <div className="md:ml-64">
+    <div>
       <AllUsersTableSec
-        thdatathdata={[
+        thdata={[
           "S.N",
           "image",
           "First Name",
@@ -22,4 +22,4 @@ const AllUsersTablePage = () => {
   );
 };
 
-export default AllUsersTablePage;
+export default AllUserTablePage;
