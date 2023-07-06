@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 export const AllUsersTableBody = ({ dataMaped, idx, refetch }: any) => {
-  const [data, setData] = useState<UserInfo>();
+  const [data, setData] = useState<UserInfo>([]);
   const [deleteUserProfile, { isLoading }] = useDeleteUserProfileMutation();
   const handleDelete = async (id: number) => {
     if (isLoading || !id) {
@@ -23,6 +23,8 @@ export const AllUsersTableBody = ({ dataMaped, idx, refetch }: any) => {
       }
     }
   };
+  const handleUpdate = () => {};
+
   return (
     <tbody key={data?.id} className="bg-white divide-y font-font-4">
       <tr className="text-gray-700 bg-gray-50 hover:bg-gray-100">
@@ -67,7 +69,7 @@ export const AllUsersTableBody = ({ dataMaped, idx, refetch }: any) => {
           ) : (
             <button
               className="flex gap-2 px-3 py-2 text-lg text-red-600 rounded-lg"
-              onClick={() => handleDelete(data?._id)}
+              onClick={() => handleDelete(data?.id)}
             >
               {/* <ArchiveSvg /> */}
             </button>
