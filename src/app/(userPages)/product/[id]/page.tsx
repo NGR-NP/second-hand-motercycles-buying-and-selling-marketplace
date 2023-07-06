@@ -1,5 +1,6 @@
 "use client";
 import { useSingleProductQuery } from "@/redux/products/getSingleProductApiSlice";
+import Footer from "@/sections/Footer";
 import NavBar from "@/sections/NavBar";
 import Slider from "@/sections/Slider";
 import Image from "next/image";
@@ -26,6 +27,44 @@ const Page = () => {
       <NavBar />
       <main className="mt-20 max-w-screen-xl mx-auto">
         <div className="flex gap-4 justify-center px-4 max-w-screen-xl w-full">
+          <div className="flex flex-col flex-[0.2] gap-4">
+            <div>
+              <Image
+                className="max-w-full rounded-lg"
+                src={"/images/reaction/shock.jpeg"}
+                alt="img"
+                height={200}
+                width={400}
+              />
+            </div>
+            <div>
+              <Image
+                className="max-w-full rounded-lg"
+                src={"/images/reaction/shock.jpeg"}
+                alt="img"
+                height={200}
+                width={400}
+              />
+            </div>
+            <div>
+              <Image
+                className="max-w-full rounded-lg"
+                src={"/images/reaction/shock.jpeg"}
+                alt="img"
+                height={200}
+                width={400}
+              />
+            </div>
+            <div>
+              <Image
+                className="max-w-full rounded-lg"
+                src={"/images/reaction/shock.jpeg"}
+                alt="img"
+                height={200}
+                width={400}
+              />
+            </div>
+          </div>
           <div className="grid flex-[1.1] gap-4">
             {/* <div className="relative ">
               <div className="pb-10">
@@ -70,46 +109,8 @@ const Page = () => {
                 width={200000}
               />
             </div>
-            <div className="grid grid-cols-5 gap-4">
-              <div>
-                <Image
-                  className="max-w-full rounded-lg"
-                  src={"/images/reaction/shock.jpeg"}
-                  alt="img"
-                  height={200}
-                  width={400}
-                />
-              </div>
-              <div>
-                <Image
-                  className="max-w-full rounded-lg"
-                  src={"/images/reaction/shock.jpeg"}
-                  alt="img"
-                  height={200}
-                  width={400}
-                />
-              </div>
-              <div>
-                <Image
-                  className="max-w-full rounded-lg"
-                  src={"/images/reaction/shock.jpeg"}
-                  alt="img"
-                  height={200}
-                  width={400}
-                />
-              </div>
-              <div>
-                <Image
-                  className="max-w-full rounded-lg"
-                  src={"/images/reaction/shock.jpeg"}
-                  alt="img"
-                  height={200}
-                  width={400}
-                />
-              </div>
-            </div>
           </div>
-          <div className="mt-16 flex flex-1 border border-gray-400 rounded-lg">
+          <div className="mt-16 flex flex-1 border border-gray-400 rounded-lg h-5/4 w-11">
             <div className="flex flex-col p-4 space-y-4">
               <div>{datas?.name}</div>
               <div>
@@ -125,7 +126,7 @@ const Page = () => {
                 )}{" "}
                 Owner
               </div>
-              <div>₹ 6.50 Lakh Check Bike Qualityarrow</div>
+              <div>₹ 4.5 Lakh Check Bike Qualityarrow</div>
               <div>EMI starts @ ₹16,134 per month*</div>
               <button
                 type="submit"
@@ -152,6 +153,7 @@ const Page = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 };
