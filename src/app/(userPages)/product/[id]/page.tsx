@@ -5,6 +5,8 @@ import NavBar from "@/sections/NavBar";
 import Slider from "@/sections/Slider";
 import Image from "next/image";
 import React from "react";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { BsFuelPump } from "react-icons/bs";
 
 const Page = () => {
   const { data } = useSingleProductQuery({
@@ -15,17 +17,11 @@ const Page = () => {
 
   const ButtonStyles =
     "border text-black border-blue-200 rounded-xl p-2 text-xs bg-blue-50 hover:bg-blue-200";
-  // const imgs: any = [
-  //   "/images/bikes/bike-01.jpg",
-  //   "/images/bikes/bike-02.jpg",
-  //   "/images/bikes/bike-03.jpg",
-  //   "/images/bikes/bike-04.jpg",
-  // ];
 
   return (
     <>
       <NavBar />
-      <main className="mt-20 max-w-screen-xl mx-auto">
+      <main className="mt-20 max-w-screen-xl mx-auto mb-8">
         <div className="flex gap-4 justify-center px-4 max-w-screen-xl w-full">
           <div className="flex flex-col flex-[0.2] gap-4">
             <div>
@@ -66,40 +62,6 @@ const Page = () => {
             </div>
           </div>
           <div className="grid flex-[1.1] gap-4">
-            {/* <div className="relative ">
-              <div className="pb-10">
-                <Image
-                  width={632}
-                  className="h-96 object-cover"
-                  height={500}
-                  alt="img"
-                  src={imgs.at(0)}
-                />
-              </div>
-              <div className="flex absolute bottom-0 flex-row space-x-8 ml-10 mt-6">
-                <Image
-                  width={200}
-                  height={100}
-                  className="w-40 h-40"
-                  alt="img"
-                  src={imgs.at(1)}
-                />
-                <Image
-                  className="w-40 h-40"
-                  width={200}
-                  height={100}
-                  alt="img"
-                  src={imgs.at(2)}
-                />
-                <Image
-                  className="w-40 h-40"
-                  width={200}
-                  height={100}
-                  alt="img"
-                  src={imgs.at(3)}
-                />
-              </div>
-            </div> */}
             <div>
               <Image
                 className="max-w-full object-cover rounded-lg"
@@ -110,7 +72,7 @@ const Page = () => {
               />
             </div>
           </div>
-          <div className="mt-16 flex flex-1 border border-gray-400 rounded-lg h-5/4 w-11">
+          <div className="mt-16 ml-8 w-fit flex  border border-gray-100 rounded-2xl h-fit shadow-2xl">
             <div className="flex flex-col p-4 space-y-4">
               <div>{datas?.name}</div>
               <div>
@@ -146,10 +108,30 @@ const Page = () => {
             <button className={`${ButtonStyles}`}>EMI CALC</button>
             <button className={`${ButtonStyles}`}>SIMILAR BIKES</button>
           </div>
-          <div className="flex bg-stone-50  mx-auto justify-center flex-col mt-8">
-            <h1 className="flex justify-center font-sans font-bold text-xl">
-              Bikes overview
-            </h1>
+          <div className="flex bg-stone-50  w-fit ml-0 flex-col space-y-6 mt-8 p-8 rounded-lg shadow-2xl">
+            <div className="font-sans font-bold text-xl">
+              <h1>Bikes overview</h1>
+            </div>
+            <ul className="flex gap-32">
+              <li className="h-10">
+                <div className="flex items-center gap-4">
+                  <FaRegCalendarAlt />
+                  <div className="flex gap-10 text-sm">
+                    <div className="text-slate-500">Registration Year</div>
+                    <span className="font-semibold">2023</span>
+                  </div>
+                </div>
+              </li>
+              <li className="h-10">
+                <div className="flex items-center gap-4">
+                  <BsFuelPump />
+                  <div className="flex gap-10 text-sm">
+                    <div className="text-slate-500">Fuel Type</div>
+                    <span className="font-semibold">Electric</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </main>
