@@ -7,6 +7,8 @@ import Image from "next/image";
 import React from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { BsFuelPump } from "react-icons/bs";
+import { LuDroplets } from "react-icons/lu";
+import { PiEngine } from "react-icons/pi";
 
 const Page = () => {
   const { data } = useSingleProductQuery({
@@ -112,26 +114,46 @@ const Page = () => {
             <div className="font-sans font-bold text-xl">
               <h1>Bikes overview</h1>
             </div>
-            <ul className="flex gap-32">
-              <li className="h-10">
-                <div className="flex items-center gap-4">
-                  <FaRegCalendarAlt />
-                  <div className="flex gap-10 text-sm">
-                    <div className="text-slate-500">Registration Year</div>
-                    <span className="font-semibold">2023</span>
+            <div>
+              <ul className="grid grid-cols-2 gap-x-32">
+                <li className="h-10">
+                  <div className="flex items-center gap-4">
+                    <FaRegCalendarAlt />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Registration Year</li>
+                      <li className="font-semibold">2023</li>
+                    </ul>
                   </div>
-                </div>
-              </li>
-              <li className="h-10">
-                <div className="flex items-center gap-4">
-                  <BsFuelPump />
-                  <div className="flex gap-10 text-sm">
-                    <div className="text-slate-500">Fuel Type</div>
-                    <span className="font-semibold">Electric</span>
+                </li>
+                <li className="h-10">
+                  <div className="flex items-center gap-4">
+                    <BsFuelPump />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Fuel Type</li>
+                      <li className="font-semibold">Electric</li>
+                    </ul>
                   </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+                <li className="h-10">
+                  <div className="flex items-center gap-4">
+                    <LuDroplets />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Mileage</li>
+                      <li className="font-semibold">50 Kmpl</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex items-center gap-4">
+                    <PiEngine />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Fuel Type</li>
+                      <li className="font-semibold">Electric</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>
