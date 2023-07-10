@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const SellUsedBike = () => {
+const SellUsedBikePage = () => {
   const [image, setImage] = useState(undefined);
   const handleUploadImg = (e: any) => {
     const img = e.target.files[0];
@@ -151,4 +151,4 @@ const SellUsedBike = () => {
   );
 };
 
-export default SellUsedBike;
+export default SellUsedBikePage;

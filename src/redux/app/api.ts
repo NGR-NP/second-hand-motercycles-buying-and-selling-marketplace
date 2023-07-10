@@ -6,7 +6,6 @@ const baseQuery = fetchBaseQuery({
   // baseUrl: "http://192.168.1.96:8000/api/v1", //// deepak
   // baseUrl: "http://192.168.1.140:8080/api/v1",
   baseUrl: "http://192.168.1.140:8979/api/v1",
-  // baseUrl: "https://backend-production-5fc4.up.railway.app",
   // credentials: "include",
   // prepareHeaders: (headers, { getState }) => {
   //   const token = (getState() as RootState).auth?.auth?.token;

@@ -5,6 +5,13 @@ import NavBar from "@/sections/NavBar";
 import Slider from "@/sections/Slider";
 import Image from "next/image";
 import React from "react";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { BsFuelPump } from "react-icons/bs";
+import { LuDroplets } from "react-icons/lu";
+import { PiEngine } from "react-icons/pi";
+import { BiTachometer } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { FcEngineering, FcOvertime } from "react-icons/fc";
 
 const Page = () => {
   const { data } = useSingleProductQuery({
@@ -25,8 +32,8 @@ const Page = () => {
   return (
     <>
       <NavBar />
-      <main className="mt-20 max-w-screen-xl mx-auto">
-        <div className="flex gap-4 justify-center px-4 max-w-screen-xl w-full">
+      <main className="mx-auto mt-20 mb-8 max-w-screen-xl">
+        <div className="flex gap-4 justify-center px-4 w-full max-w-screen-xl">
           <div className="flex flex-col flex-[0.2] gap-4">
             <div>
               <Image
@@ -66,43 +73,9 @@ const Page = () => {
             </div>
           </div>
           <div className="grid flex-[1.1] gap-4">
-            {/* <div className="relative ">
-              <div className="pb-10">
-                <Image
-                  width={632}
-                  className="h-96 object-cover"
-                  height={500}
-                  alt="img"
-                  src={imgs.at(0)}
-                />
-              </div>
-              <div className="flex absolute bottom-0 flex-row space-x-8 ml-10 mt-6">
-                <Image
-                  width={200}
-                  height={100}
-                  className="w-40 h-40"
-                  alt="img"
-                  src={imgs.at(1)}
-                />
-                <Image
-                  className="w-40 h-40"
-                  width={200}
-                  height={100}
-                  alt="img"
-                  src={imgs.at(2)}
-                />
-                <Image
-                  className="w-40 h-40"
-                  width={200}
-                  height={100}
-                  alt="img"
-                  src={imgs.at(3)}
-                />
-              </div>
-            </div> */}
             <div>
               <Image
-                className="max-w-full object-cover rounded-lg"
+                className="object-cover max-w-full rounded-lg"
                 src={"/images/reaction/shock.jpeg"}
                 alt="img"
                 height={200000}
@@ -110,7 +83,7 @@ const Page = () => {
               />
             </div>
           </div>
-          <div className="mt-16 flex flex-1 border border-gray-400 rounded-lg h-5/4 w-11">
+          <div className="flex mt-16 ml-8 rounded-2xl border border-gray-100 shadow-2xl w-fit h-fit">
             <div className="flex flex-col p-4 space-y-4">
               <div>{datas?.name}</div>
               <div>
@@ -138,18 +111,94 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="w-4/5 mx-auto">
-          <div className="space-x-2 mt-16 flex justify-start">
+        <div className="mx-auto w-4/5">
+          <div className="flex justify-start mt-16 space-x-2">
             <button className={`${ButtonStyles}`}>OVERWIEW</button>
             <button className={`${ButtonStyles}`}>SPECS & FEATURES</button>
             <button className={`${ButtonStyles}`}>BIKE QUALITY CHECKS</button>
             <button className={`${ButtonStyles}`}>EMI CALC</button>
             <button className={`${ButtonStyles}`}>SIMILAR BIKES</button>
           </div>
-          <div className="flex bg-stone-50  mx-auto justify-center flex-col mt-8">
-            <h1 className="flex justify-center font-sans font-bold text-xl">
-              Bikes overview
-            </h1>
+          <div className="flex flex-col p-8 mt-8 ml-0 space-y-6 rounded-lg shadow-2xl bg-stone-50 w-fit">
+            <div className="font-sans text-xl font-bold">
+              <h1>Bikes overview</h1>
+            </div>
+            <div>
+              <ul className="grid grid-cols-2 gap-x-32">
+                <li className="h-10">
+                  <div className="flex gap-4 items-center">
+                    <FaRegCalendarAlt />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Registration Year</li>
+                      <li className="font-semibold">2023</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex gap-4 items-center">
+                    <BsFuelPump />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Fuel Type</li>
+                      <li className="font-semibold">Electric</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex gap-4 items-center">
+                    <LuDroplets />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Mileage</li>
+                      <li className="font-semibold">50 Kmpl</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex gap-4 items-center">
+                    <PiEngine />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Engine </li>
+                      <li className="font-semibold">Engine type</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex gap-4 items-center">
+                    <BiTachometer />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Kms Driven</li>
+                      <li className="font-semibold">90000 Kms</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex gap-4 items-center">
+                    <CgProfile />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Ownership </li>
+                      <li className="font-semibold">Second owner</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex gap-4 items-center">
+                    <FcEngineering />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Engine Displacement</li>
+                      <li className="font-semibold">200 cc</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex gap-4 items-center">
+                    <FcOvertime />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Year of Manufacture</li>
+                      <li className="font-semibold">2018</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>
