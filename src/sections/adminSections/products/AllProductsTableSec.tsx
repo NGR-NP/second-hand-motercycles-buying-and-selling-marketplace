@@ -1,17 +1,24 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import UserPagination from "@/components/pagination/UserPagination";
-import { AllUsersTableBody } from "@/components/Admin/users/AllUsersTableBody";
-import { useGetAllUsersQuery } from "@/redux/users/getAllUsersApiSlice";
+import { AllProductsTableBody } from "@/components/Admin/products/AllProductsTableBody";
+import { useGetAllProductQuery } from "@/redux/products/getAllProductApiSlice";
 
-const AllUsersTableSec = ({ thdata }: any) => {
+const AllProductsTableSec = ({ thdata }: any) => {
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
-  const { data, isSuccess, isLoading, isFetching, refetch } =
-    useGetAllUsersQuery({
-      limit,
-      page,
-    });
+  const {
+    data,
+    isSuccess,
+    isLoading,
+    error,
+    isFetching,
+    refetch,
+    status,
+  }: RtkQueryResultType = useGetAllProductQuery({
+    limit,
+    page,
+  });
 
   return (
     <div className="mx-4 mt-14">
@@ -36,9 +43,10 @@ const AllUsersTableSec = ({ thdata }: any) => {
               </thead>
 
               {isSuccess &&
-                data?.allUsers?.map((data: any, idx: number) => {
+                // data?.map((data: any, idx: number) => { // moke api
+                data?.allProducts?.map((data: any, idx: number) => {
                   return (
-                    <AllUsersTableBody
+                    <AllProductsTableBody
                       idx={idx}
                       key={data?.id}
                       dataMaped={data}
@@ -62,4 +70,4 @@ const AllUsersTableSec = ({ thdata }: any) => {
   );
 };
 
-export default AllUsersTableSec;
+export default AllProductsTableSec;

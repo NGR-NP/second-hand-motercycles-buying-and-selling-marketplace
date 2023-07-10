@@ -13,6 +13,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import AllProductsReducuer from "../products/slice/AllProductsSlice";
 
 const persistConfig = {
   key: "root",
@@ -25,6 +26,7 @@ export const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
     auth: persistedReducer,
+    AllProducts: AllProductsReducuer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

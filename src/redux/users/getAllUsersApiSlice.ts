@@ -2,7 +2,7 @@ import { apiSlice } from "../app/api";
 export const getAllUsersAPiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getAllUsers: builder.query({
-      query: ({ page, limit }) => `/admin/view_all_users`,
+      query: ({ page, limit }: any) => `/admin/view_all_users`,
       keepUnusedDataFor: 3,
     }),
   }),

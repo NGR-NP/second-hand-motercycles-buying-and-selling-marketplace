@@ -12,7 +12,7 @@ const OtpVerifyDialog = ({
   closeDialog: any;
   email: string;
 }) => {
-  const [verifyOTP, { isLoading, isSuccess, isError, error, status }] =
+  const [verifyOTP, { isLoading, isSuccess, isError, error, status }]:any =
     useVerifyOTPMutation();
 
   const {
@@ -28,7 +28,9 @@ const OtpVerifyDialog = ({
         otp: data.otp,
       });
       console.log(res);
-    } catch (error) {}
+    } catch (err) {
+      console.log(error?.data.msg)
+    }
   };
   return (
     <dialog

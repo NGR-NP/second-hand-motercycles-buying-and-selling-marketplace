@@ -13,6 +13,11 @@ const BuyPage = () => {
     totalPages: 1,
     count: 1,
   });
+  const update = () => {
+    console.log(data);
+    const filterData = data.filter((d: any) => d.id !== "1");
+    console.log(filterData);
+  };
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
   const pagination = useCallback(() => {
@@ -35,10 +40,12 @@ const BuyPage = () => {
     lg: "absolute top-3 rignt-4 text-white1",
   };
 
+  console.log(error?.data);
   return (
     <>
       <div>
         <div>11 total search</div>
+        <button onClick={update}>update</button>
       </div>
       <div className="flex">
         <aside className="hidden lg:block flex-[0.4]">

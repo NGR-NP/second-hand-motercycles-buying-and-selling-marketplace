@@ -122,11 +122,13 @@ const AdminAsideSec = ({ children }: { children: React.ReactNode }) => {
           <ul className="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200">
             <li>
               <Link
-                href="/user/profile"
+                href="/profile"
                 className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
               >
                 {image ? (
-                  <Image width={200} height={200}
+                  <Image
+                    width={200}
+                    height={200}
                     src={image || "/ITAHARI.jpeg"}
                     className="object-cover w-8 h-8 rounded-full"
                     alt=""
