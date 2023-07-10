@@ -9,6 +9,9 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { BsFuelPump } from "react-icons/bs";
 import { LuDroplets } from "react-icons/lu";
 import { PiEngine } from "react-icons/pi";
+import { BiTachometer } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { FcEngineering, FcOvertime } from "react-icons/fc";
 
 const Page = () => {
   const { data } = useSingleProductQuery({
@@ -147,8 +150,44 @@ const Page = () => {
                   <div className="flex items-center gap-4">
                     <PiEngine />
                     <ul className="flex gap-10 text-sm">
-                      <li className="text-slate-500">Fuel Type</li>
-                      <li className="font-semibold">Electric</li>
+                      <li className="text-slate-500">Engine </li>
+                      <li className="font-semibold">Engine type</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex items-center gap-4">
+                    <BiTachometer />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Kms Driven</li>
+                      <li className="font-semibold">90000 Kms</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex items-center gap-4">
+                    <CgProfile />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Ownership </li>
+                      <li className="font-semibold">Second owner</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex items-center gap-4">
+                    <FcEngineering />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Engine Displacement</li>
+                      <li className="font-semibold">200 cc</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="h-10">
+                  <div className="flex items-center gap-4">
+                    <FcOvertime />
+                    <ul className="flex gap-10 text-sm">
+                      <li className="text-slate-500">Year of Manufacture</li>
+                      <li className="font-semibold">2018</li>
                     </ul>
                   </div>
                 </li>
