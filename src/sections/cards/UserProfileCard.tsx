@@ -44,7 +44,7 @@ const UserProfileCard = ({ datas, loading }: any) => {
                   width={200}
                   height={200}
                   className="object-cover z-10 w-24 h-24 rounded-full border-2 border-white border-solid"
-                  src={data?.image || "/images/reaction/shock.jpeg"}
+                  src={"/images/reaction/shock.jpeg"}
                   alt="profile image"
                 />
               </Link>

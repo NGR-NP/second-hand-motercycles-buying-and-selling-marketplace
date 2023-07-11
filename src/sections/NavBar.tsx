@@ -1,9 +1,14 @@
 "use client";
+import { useAppSelector } from "@/redux/app/ReduxHooks";
+import { selectCurrentFirstName } from "@/redux/auth/authSlice";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const NavBar = () => {
+  const data = useAppSelector(selectCurrentFirstName);
+  console.log("REDUX STATE", data);
+
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
@@ -18,7 +23,7 @@ const NavBar = () => {
               alt="Flowbite Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap">
-              KBBTY
+              {data}
             </span>
           </Link>
           <div className="flex md:order-2">

@@ -14,6 +14,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import AllProductsReducuer from "../products/slice/AllProductsSlice";
+import counterReducer from "../counter/counterSlice";
 
 const persistConfig = {
   key: "root",
@@ -27,7 +28,8 @@ export const store = configureStore({
     [apiSlice.reducerPath]: apiSlice.reducer,
     auth: persistedReducer,
     AllProducts: AllProductsReducuer,
-  },
+    Counter: counterReducer
+ },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

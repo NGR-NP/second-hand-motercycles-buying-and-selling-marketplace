@@ -36,7 +36,7 @@ const AdminAsideSec = ({ children }: { children: React.ReactNode }) => {
             <Image
               width={50}
               height={50}
-              src={image || "/ITAHARI.jpeg"}
+              src={"/ITAHARI.jpeg"}
               className="object-cover w-8 h-8 rounded-full"
               alt={firstName || "user"}
             />
@@ -129,7 +129,7 @@ const AdminAsideSec = ({ children }: { children: React.ReactNode }) => {
                   <Image
                     width={200}
                     height={200}
-                    src={image || "/ITAHARI.jpeg"}
+                    src={"/ITAHARI.jpeg"}
                     className="object-cover w-8 h-8 rounded-full"
                     alt=""
                   />

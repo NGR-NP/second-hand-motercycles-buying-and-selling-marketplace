@@ -31,9 +31,18 @@ const Login = () => {
     formState: { errors },
   } = useForm<LoginType>();
   const onSubmit: SubmitHandler<LoginType> = async (data) => {
+    const datas: LoggedInUserData = {
+      firstName: "tej",
+      lastName: "karki",
+      image: "https://jfj.png",
+      email: "e",
+      phone: 9339,
+      role: "admin",
+      token: "hjgjhgjyghgjygf56656i76754iturdfgfgjjhgncv",
+    };
+    dispatch(setCredentials(datas));
     if (isLoading) return;
     const { email, password, rememberMe } = data;
-
     try {
       verifyOTPRef.current?.showModal();
       const res = await login({ email, password, rememberMe }).unwrap();
