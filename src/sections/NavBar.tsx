@@ -1,9 +1,13 @@
 "use client";
+import { useAppSelector } from "@/redux/app/ReduxHooks";
+import { selectCurrentFirstName } from "@/redux/auth/authSlice";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const NavBar = () => {
+  const data = useAppSelector(selectCurrentFirstName);
+console.log(data)
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>

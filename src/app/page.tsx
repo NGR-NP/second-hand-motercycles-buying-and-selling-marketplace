@@ -1,3 +1,5 @@
+import { useAppSelector } from "@/redux/app/ReduxHooks";
+import { selectCurrentFirstName } from "@/redux/auth/authSlice";
 import Footer from "@/sections/Footer";
 import HeroSection from "@/sections/HeroSection";
 import InspireSection from "@/sections/InspireSection";

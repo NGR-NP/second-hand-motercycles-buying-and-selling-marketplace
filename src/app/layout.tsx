@@ -1,8 +1,30 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { Providers } from "@/redux/app/Provider";
-const inter = Inter({ subsets: ["latin"] });
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+
+import { Inter, Raleway, Bitter, Brygada_1918, Changa } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
+});
+
+const bitter = Bitter({
+  subsets: ["latin"],
+  variable: "--font-bitter",
+});
+const paragraph = Brygada_1918({
+  subsets: ["latin"],
+  variable: "--font-paragraph",
+});
+const title = Changa({
+  subsets: ["latin"],
+  variable: "--font-title",
+});
 import "react-toastify/dist/ReactToastify.css";
 export const metadata = {
   title: "Create Next App",
@@ -15,26 +37,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Providers>
-          <ToastContainer
-            position="bottom-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
-          {children}
-        </Providers>
+    <html
+      lang="en"
+      className={`${raleway.variable} ${inter.variable} ${title.variable} ${paragraph.variable} ${bitter.variable}`}
+    >
+      <body>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
 }
-
-/* // suppressHydrationWarning={true} */

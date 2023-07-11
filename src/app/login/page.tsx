@@ -7,15 +7,16 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Link from "next/link";
 import AppLogo from "@/components/logo/AppLogo";
 import { useLoginMutation } from "@/redux/auth/authApiSlice";
-import { useAppDispatch } from "@/redux/app/ReduxHooks";
-import { setCredentials } from "@/redux/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/app/ReduxHooks";
+import { selectCurrentFirstName, setCredentials } from "@/redux/auth/authSlice";
 import OtpVerifyDialog from "./OtpVerifyDialog";
 import { toast } from "react-toastify";
 import LoadingCircleSvg from "@/components/svg/loading/LoadingCircleSvg";
 
 const Login = () => {
   const verifyOTPRef = useRef<HTMLDialogElement>(null);
-
+  const data = useAppSelector(selectCurrentFirstName);
+  console.log(data);
   const closeDialog = () => {
     verifyOTPRef?.current?.close();
   };
@@ -31,6 +32,16 @@ const Login = () => {
     formState: { errors },
   } = useForm<LoginType>();
   const onSubmit: SubmitHandler<LoginType> = async (data) => {
+    const datas: LoggedInUserData = {
+      firstName: "tej",
+      lastName: "karki",
+      email: "jfjf",
+      phone: 111,
+      image: "fjfj",
+      role: "admin",
+      token: "hjgjhgjyghgjygf56656i76754iturdfgfgjjhgncv",
+    };
+    dispatch(setCredentials(datas))
     if (isLoading) return;
     const { email, password, rememberMe } = data;
 

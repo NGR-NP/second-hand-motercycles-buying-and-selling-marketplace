@@ -34,9 +34,11 @@ const AdminAsideSec = ({ children }: { children: React.ReactNode }) => {
         <div className="mx-4">
           <Link href="/user/profile">
             <Image
+              loading="lazy"
               width={50}
               height={50}
-              src={image || "/ITAHARI.jpeg"}
+              src={"/images/reaction/shock.jpeg"}
+              // src={image || "/images/reaction/shock.jpeg"}
               className="object-cover w-8 h-8 rounded-full"
               alt={firstName || "user"}
             />
@@ -129,7 +131,8 @@ const AdminAsideSec = ({ children }: { children: React.ReactNode }) => {
                   <Image
                     width={200}
                     height={200}
-                    src={image || "/ITAHARI.jpeg"}
+                    src={ "/images/reaction/shock.jpeg"}
+                    // src={image || "/images/reaction/shock.jpeg"}
                     className="object-cover w-8 h-8 rounded-full"
                     alt=""
                   />
