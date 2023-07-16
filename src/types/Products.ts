@@ -20,6 +20,28 @@ type MinProductListType = {
   isDeleteByUser: boolean;
   isNegotiable: boolean;
 };
+type SingleProductResponseTypes = {
+  id?: number;
+  name: string;
+  companyId: number;
+  boughtYear: number;
+  price: number;
+  modal: string;
+  images: Record<string, any>;
+  location: string;
+  color: string;
+  userId: number;
+  kmDriven: number;
+  ownerShip: number;
+  engineDisplacement: number;
+  milage: string;
+  category: string;
+  wheelSize: number;
+  isVerifiedByGarage: "unchecked" | "verified" | "unverified";
+  isDeleteByUser: boolean;
+  isNegotiable: boolean;
+}
+
 interface ProductAttributes {
   products: [
     {
