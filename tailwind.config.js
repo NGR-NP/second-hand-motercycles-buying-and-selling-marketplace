@@ -42,6 +42,13 @@ module.exports = {
         gray2: "hsl(0, 0%, 83%)",
         gray3: "hsl(0, 0%, 75%)",
       },
+      fontFamily: {
+        raleway: ["var(--font-raleway)"],
+        inter: ["var(--font-inter)"],
+        bitter: ["var(--font-bitter)"],
+        paragraph: ["var(--font-paragraph)"],
+        title: ["var(--font-title)"],
+      },
     },
   },
   plugins: [],
