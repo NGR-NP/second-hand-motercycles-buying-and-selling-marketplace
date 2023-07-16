@@ -21,7 +21,10 @@ const AllProductsSlice = createSlice({
         products: products || [],
       };
     },
-    updateStatus: (state, action: PayloadAction<MinProductListType>) => {
+    updateStatus: (
+      state,
+      action: PayloadAction<SingleProductResponseTypes>
+    ) => {
       const { id } = action.payload;
     },
   },

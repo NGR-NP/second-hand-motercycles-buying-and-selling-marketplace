@@ -14,11 +14,9 @@ import { CgProfile } from "react-icons/cg";
 import { FcEngineering, FcOvertime } from "react-icons/fc";
 
 const Page = () => {
-  const { data }  = useSingleProductQuery({
+  const { data }: any = useSingleProductQuery({
     id: 1,
-  }) 
-
-  // const datas: SingleProductResponseTypes = data;
+  });
 
   const ButtonStyles =
     "border text-black border-blue-200 rounded-xl p-2 text-xs bg-blue-50 hover:bg-blue-200";
@@ -85,17 +83,17 @@ const Page = () => {
           </div>
           <div className="flex mt-16 ml-8 rounded-2xl border border-gray-100 shadow-2xl w-fit h-fit">
             <div className="flex flex-col p-4 space-y-4">
-              <div>{datas?.name}</div>
+              <div>{data?.name}</div>
               <div>
-                {datas?.odometer}kms • {datas?.engineType} • {datas?.ownership}
-                {datas?.ownership === 1 ? (
+                {data?.odometer}kms • {data?.engineType} • {data?.ownership}
+                {data?.ownership === 1 ? (
                   <sup>st</sup>
-                ) : datas?.ownership === 2 ? (
+                ) : data?.ownership === 2 ? (
                   <sup>nd</sup>
-                ) : datas?.ownership === 3 ? (
+                ) : data?.ownership === 3 ? (
                   <sup>rd</sup>
                 ) : (
-                  datas?.ownership >= 4 && <sup>th</sup>
+                  data?.ownership >= 4 && <sup>th</sup>
                 )}{" "}
                 Owner
               </div>

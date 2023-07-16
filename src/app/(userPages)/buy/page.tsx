@@ -36,9 +36,7 @@ const BuyPage = () => {
     pagination();
   }, [pagination]);
 
-  const ngClass = {
-    lg: "absolute top-3 rignt-4 text-white1",
-  };
+
 
   console.log(error?.data);
   return (
@@ -54,7 +52,7 @@ const BuyPage = () => {
         <main className="flex-1">
           <section className="flex flex-wrap justify-center mb-20 bg-slate-100">
             {data &&
-              data?.map((data: MinProductListType) => {
+              data?.map((data: SingleProductResponseTypes) => {
                 return (
                   <div
                     key={data.name}
@@ -78,15 +76,13 @@ const BuyPage = () => {
                       </div>
                       <div className="flex-1 px-4 max-w-sm">
                         <p className="pb-4 font-serif font-bold">{data.name}</p>
-                        <p className="pb-4 font-serif font-thin">
-                          {data.shortDescription}
-                        </p>
+
                         <div className="flex gap-6 pb-2 font-thin">
                           <p className="mr-2 text-xs font-extralight">
                             20000 kms
                           </p>
                           <ul className="text-xs font-extralight list-disc">
-                            <li>{data.engineType}</li>
+                            <li>{data.engineDisplacement}</li>
                           </ul>
                         </div>
                         <div className="font-serif font-bold">

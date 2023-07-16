@@ -11,7 +11,7 @@ export const AllProductsTableBody = ({
   idx,
   refetch,
 }: {
-  dataMaped: SingleProductResponseTypes;
+  dataMaped: any; //SingleProductResponseTypes;
   idx: number;
   refetch: any;
 }) => {
@@ -21,15 +21,15 @@ export const AllProductsTableBody = ({
       return;
     }
     try {
-      const result = await deleteUserProfile({ id });
-      // if (result?.data?.message) {
-      //   toast.success(`${result?.data?.message}`);
-      // }
-    } catch (err) {
+      const result: any = await deleteUserProfile({ id });
+      if (result?.data?.message) {
+        toast.success(`${result?.data?.message}`);
+      }
+    } catch (err: any) {
       console.log(err);
-      // if (err) {
-      //   toast.error(`${err?.data?.errMsg}`);
-      // }
+      if (err) {
+        toast.error(`${err?.data?.errMsg}`);
+      }
     }
   };
   const handleUpdate = () => {};
@@ -48,7 +48,7 @@ export const AllProductsTableBody = ({
                 height={200}
                 className="object-cover w-full h-full"
                 src={
-                  dataMaped?.image ||
+                  dataMaped?.images[0] ||
                   "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
                 }
                 alt={dataMaped?.name}
@@ -62,19 +62,19 @@ export const AllProductsTableBody = ({
           </div>
         </td>
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.name}</td>
-        <td className="px-4 py-3 w-24 text-sm">
-          {dataMaped?.shortDescription}
-        </td>
+
         {/* <td className="px-4 py-3 w-24 text-sm">{dataMaped?.description}</td> */}
-        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.company}</td>
-        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.model}</td>
-        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.odometer}</td>
-        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.engineType}</td>
-        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.ownership}</td>
+        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.companyId}</td>
+        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.modal}</td>
+        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.kmDriven}</td>
+        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.color}</td>
+        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.ownerShip}</td>
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.price}</td>
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.userId}</td>
-        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.year}</td>
-        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.isSold}</td>
+        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.boughtYear}</td>
+        <td className="px-4 py-3 w-24 text-sm">
+          {dataMaped?.isVerifiedByGarage}
+        </td>
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.isNegotiable}</td>
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.isDeleteByUser}</td>
         <UpdateStatusDropdown dataMaped={dataMaped} />
