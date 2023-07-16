@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const SellUsedBikePage = () => {
   const [image, setImage] = useState(undefined);
@@ -8,11 +9,14 @@ const SellUsedBikePage = () => {
     setImage(img);
     console.log(e.target);
   };
+  const path = useSearchParams()
+  console.log(path.get("garageName")) 
   return (
     <main className="bg-slate-400">
       <div className="mx-auto">
         <div className="flex justify-center items-center py-8 h-full">
           <form className="w-[80vmin] bg-slate-200 mt-2 px-3 py-4 rounded-md">
+      <h1>{path.get("garageName")}</h1>
             <div className="mb-6">
               <div className="flex justify-center items-center w-full">
                 <label
@@ -41,9 +45,9 @@ const SellUsedBikePage = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                         ></path>
                       </svg>
