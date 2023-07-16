@@ -1,4 +1,5 @@
 type MinProductListType = {
+  id: string | number;
   name: string;
   company: string;
   boughtYears: number;
