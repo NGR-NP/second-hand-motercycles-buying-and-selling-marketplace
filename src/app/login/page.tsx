@@ -11,7 +11,6 @@ const page = () => {
       <div className="flex flex-col">
         Email Address:
         <div>
-          <div>hello</div>
           <input
             className="border border-black"
             type="email"
