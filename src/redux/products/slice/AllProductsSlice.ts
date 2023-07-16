@@ -13,7 +13,13 @@ const AllProductsSlice = createSlice({
   initialState,
   reducers: {
     addData: (state, action: PayloadAction<AllProductsType>) => {
-      state.AllProducts = action.payload;
+      const { count, totalPages, currentPage, products } = action.payload;
+      state.AllProducts = {
+        count: count ?? state.AllProducts?.count,
+        currentPage: currentPage ?? state.AllProducts?.currentPage,
+        totalPages: totalPages ?? state.AllProducts?.totalPages,
+        products: products || [],
+      };
     },
   },
 });
