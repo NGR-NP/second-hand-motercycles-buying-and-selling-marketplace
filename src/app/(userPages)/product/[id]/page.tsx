@@ -14,11 +14,11 @@ import { CgProfile } from "react-icons/cg";
 import { FcEngineering, FcOvertime } from "react-icons/fc";
 
 const Page = () => {
-  const { data } = useSingleProductQuery({
+  const { data }  = useSingleProductQuery({
     id: 1,
-  });
+  }) 
 
-  const datas: SingleProductResponseTypes = data;
+  // const datas: SingleProductResponseTypes = data;
 
   const ButtonStyles =
     "border text-black border-blue-200 rounded-xl p-2 text-xs bg-blue-50 hover:bg-blue-200";
