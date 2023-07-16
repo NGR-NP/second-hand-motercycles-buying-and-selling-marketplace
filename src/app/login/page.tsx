@@ -7,7 +7,7 @@ const page = () => {
       <div>
         <AppLogo />
       </div>
-      <div className="text-base font-mono font-semibold">
+      <div className="text-base font- font-semibold">
         Login your account
       </div>
       <div className="flex flex-col">
