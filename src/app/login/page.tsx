@@ -8,11 +8,11 @@ const page = () => {
         <AppLogo />
       </div>
       <div className="text-xl font-inter font-semibold">Login your account</div>
-      <div className="flex flex-col">
-        Email Address:
+      <div className="flex flex-col space-y-2">
+        <div>Email Address</div>
         <div>
           <input
-            className="border border-black"
+            className="bg-slate-100 p-2 rounded-xl pr-10"
             type="email"
             placeholder="Enter your email"
             required
