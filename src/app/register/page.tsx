@@ -22,14 +22,14 @@ const Register = () => {
   } = useForm<RegisterType>();
   const onSubmit: SubmitHandler<RegisterType> = async (data: RegisterType) => {
     console.log("submit", data);
-    const { email, password, firstName, lastName, phone } = data;
+    const { email, password, firstName, lastName, contact } = data;
     try {
       const res = await login({
         email,
         password,
         firstName,
         lastName,
-        phone,
+        contact,
       }).unwrap();
       dispatch(res.data);
       reset();
@@ -121,33 +121,33 @@ const Register = () => {
                 placeholder="98********"
                 type="tel"
                 style={
-                  errors.phone
+                  errors.contact
                     ? { border: "1px solid red" }
                     : { border: "none" }
                 }
-                {...register("phone", {
+                {...register("contact", {
                   required: {
                     value: true,
-                    message: "Phone phone number is Required!!",
+                    message: "contact number is Required!!",
                   },
                   minLength: {
                     value: 10,
-                    message: "invalid phone number",
+                    message: "invalid contact  number",
                   },
                   maxLength: {
                     value: 14,
-                    message: "invalid phone number length",
+                    message: "invalid contact number length",
                   },
                   pattern: {
                     value: /^(\+?[0-9]{1,4})?[-\s]?[7-9]{1}\d{8}$/,
-                    message: "Invalid phone number format",
+                    message: "Invalid contact number format",
                   },
                 })}
               />
-              <i>Phone Number</i>
-              {errors?.phone && (
+              <i>contact Number</i>
+              {errors?.contact && (
                 <div className={styles.requiredMesage}>
-                  {errors.phone.message}
+                  {errors.contact.message}
                 </div>
               )}
             </div>

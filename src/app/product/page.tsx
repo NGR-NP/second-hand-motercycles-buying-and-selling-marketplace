@@ -6,6 +6,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { PiEngineThin } from "react-icons/pi";
 import { IoFlashSharp } from "react-icons/io5";
 import { GiStopwatch, GiSpeedometer } from "react-icons/gi";
+import Image from "next/image";
 
 const ProductPage = () => {
   return (
@@ -14,7 +15,7 @@ const ProductPage = () => {
       <div className="flex flex-col mt-24 space-y-4">
         {/* for secondary Navigations */}
         <div className="border-b-2 font-inter">
-          <div className="flex ml-52 mr-52 space-x-16 p-2">
+          <div className="flex p-2 mr-52 ml-52 space-x-16">
             <div>
               <select className="outline-none" name="any">
                 <option value="Bike">BIKES</option>
@@ -36,31 +37,39 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex space-x-20 ml-52 mr-52 h-96">
-          <div className="h-96 w-2/4 flex flex-col">
+        <div className="flex mr-52 ml-52 space-x-20 h-96">
+          <div className="flex flex-col w-2/4 h-96">
             <div>
-              <img
+              <Image
+                width={200}
+                height={2000}
                 src="/images/background/bg-hero-section.jpg"
                 alt="background"
               />
             </div>
-            <div className="flex space-x-2 mt-2">
+            <div className="flex mt-2 space-x-2">
               <div>
-                <img
+                <Image
+                  width={200}
+                  height={2000}
                   className="rounded-xl"
                   src="/images/background/bg-hero-section.jpg"
                   alt="background"
                 />
               </div>
               <div>
-                <img
+                <Image
+                  width={200}
+                  height={2000}
                   className="rounded-xl"
                   src="/images/background/bg-hero-section.jpg"
                   alt="background"
                 />
               </div>
               <div>
-                <img
+                <Image
+                  width={200}
+                  height={2000}
                   className="rounded-xl"
                   src="/images/background/bg-hero-section.jpg"
                   alt="background"
@@ -69,7 +78,7 @@ const ProductPage = () => {
             </div>
           </div>
           <div className="flex flex-col space-y-2 font-raleway">
-            <div className="flex space-x-4 font-bold text-2xl">
+            <div className="flex space-x-4 text-2xl font-bold">
               <div>Yamaha R15, V4</div>
               <div className="flex items-center">
                 <MdVerified />
@@ -103,16 +112,14 @@ const ProductPage = () => {
             <div className="flex space-x-12">
               <div>
                 <button
-                  className="rounded-2xl p-2 w-40 text-center font-semibold font-inter
-              bg-secondary text-white hover:shadow-md"
+                  className="p-2 w-40 font-semibold text-center text-white rounded-2xl font-inter bg-secondary hover:shadow-md"
                 >
                   BUY NOW
                 </button>
               </div>
               <div>
                 <button
-                  className="rounded-2xl p-2 w-40 border flex justify-center font-semibold font-inter
-                text-secondary border-secondary hover:shadow-md"
+                  className="flex justify-center p-2 w-40 font-semibold rounded-2xl border font-inter text-secondary border-secondary hover:shadow-md"
                 >
                   <div className="flex items-center space-x-2">
                     <div>
@@ -125,9 +132,9 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col space-y-4 border p-2 border-slate-400 ml-52 mr-52">
-          <div className="font-bold text-xl">Specs of R15, V4</div>
-          <div className="flex space-x-24 mr-4 ml-4">
+        <div className="flex flex-col p-2 mr-52 ml-52 space-y-4 border border-slate-400">
+          <div className="text-xl font-bold">Specs of R15, V4</div>
+          <div className="flex mr-4 ml-4 space-x-24">
             <div className="flex flex-col items-center">
               <div>
                 <PiEngineThin size={50} />

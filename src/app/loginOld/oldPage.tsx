@@ -9,7 +9,7 @@ import AppLogo from "@/components/logo/AppLogo";
 import { useLoginMutation } from "@/redux/auth/authApiSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/app/ReduxHooks";
 import { selectCurrentFirstName, setCredentials } from "@/redux/auth/authSlice";
-import OtpVerifyDialog from "./OtpVerifyDialog";
+import OtpVerifyDialog from "../login/OtpVerifyDialog";
 import { toast } from "react-toastify";
 import LoadingCircleSvg from "@/components/svg/loading/LoadingCircleSvg";
 
@@ -36,7 +36,7 @@ const Login = () => {
       firstName: "tej",
       lastName: "karki",
       email: "jfjf",
-      phone: 111,
+      contact: 111,
       image: "fjfj",
       role: "admin",
       token: "hjgjhgjyghgjygf56656i76754iturdfgfgjjhgncv",

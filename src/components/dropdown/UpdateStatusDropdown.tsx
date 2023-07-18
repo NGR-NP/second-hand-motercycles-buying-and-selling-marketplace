@@ -43,7 +43,7 @@ const UpdateStatusDropdown = ({ dataMaped }: any) => {
 
   useEffect(() => {
     updateState();
-  }, []);
+  }, [updateState]);
   return (
     <td className="relative px-4 py-3 space-y-2 text-xs">
       {isLoading && (
