@@ -11,12 +11,12 @@ export const AllProductsTableBody = ({
   idx,
   refetch,
 }: {
-  dataMaped: any; //SingleProductResponseTypes;
+  dataMaped: SingleProductResponseTypes;
   idx: number;
   refetch: any;
 }) => {
   const [deleteUserProfile, { isLoading }] = useDeleteUserProfileMutation();
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: number | undefined) => {
     if (isLoading || !id) {
       return;
     }

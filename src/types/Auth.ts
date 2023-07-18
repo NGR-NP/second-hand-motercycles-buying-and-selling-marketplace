@@ -8,16 +8,17 @@ type LoggedInUserData = {
   firstName: string;
   lastName: string;
   email: string;
-  phone: number;
+  contact: number;
   image: string;
   role: "admin" | "user";
   token: string;
+  isVerified?: boolean;
 };
 type RegisterType = {
   firstName: string;
   lastName: string;
   email: string;
-  phone: number;
+  contact: number;
   password: string;
   role?: "admin" | "user";
   isVerified?: boolean;
@@ -30,7 +31,9 @@ type UserInfo = {
   image: string;
   firstName: string;
   lastName: string;
-  phone: number;
+  contact: number;
   email: string;
   role: "admin" | "user";
+  isVerified: boolean;
+  
 };

@@ -1,12 +1,11 @@
-
 type SingleProductResponseTypes = {
-  id?: number ;
+  id?: number;
   name: string;
   companyId: number;
   boughtYear: number;
   price: number;
   modal: string;
-  images: [];
+  images: any[];
   location: string;
   color: string;
   userId: number;
@@ -15,7 +14,6 @@ type SingleProductResponseTypes = {
   engineDisplacement: number;
   milage: string;
   category: string;
-  wheelSize: number;
   isVerifiedByGarage: "unchecked" | "verified" | "unverified";
   isDeleteByUser: boolean;
   isNegotiable: boolean;
@@ -30,7 +28,7 @@ interface ProductAttributes {
       boughtYear: number;
       price: number;
       modal: string;
-      images:[];
+      images: any[];
       location: string;
       color: string;
       userId: number;
@@ -39,7 +37,6 @@ interface ProductAttributes {
       engineDisplacement: number;
       milage: string;
       category: string;
-      wheelSize: number;
       isVerifiedByGarage: "unchecked" | "verified" | "unverified";
       isDeleteByUser: boolean;
       isNegotiable: boolean;

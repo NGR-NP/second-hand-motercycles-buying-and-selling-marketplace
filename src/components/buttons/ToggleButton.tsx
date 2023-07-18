@@ -7,7 +7,6 @@ const ToggleButton = ({
   path,
   setData,
   data,
-  type,
   update,
   toggle,
   id,

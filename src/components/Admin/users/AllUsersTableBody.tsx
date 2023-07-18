@@ -1,3 +1,6 @@
+import ToggleButton from "@/components/buttons/ToggleButton";
+import UpdateStatusDropdown from "@/components/dropdown/UpdateStatusDropdown";
+import ArchiveSvg from "@/components/svg/ArchiveSvg";
 import EditDocSvg from "@/components/svg/EditDocSvg";
 import LoadingCircleSvg from "@/components/svg/loading/LoadingCircleSvg";
 import { useDeleteUserProfileMutation } from "@/redux/users/deleteUserWithId";
@@ -14,21 +17,22 @@ export const AllUsersTableBody = ({
   idx: number;
   refetch: any;
 }) => {
+
   const [deleteUserProfile, { isLoading }] = useDeleteUserProfileMutation();
   const handleDelete = async (id: number) => {
     if (isLoading || !id) {
       return;
     }
     try {
-      const result = await deleteUserProfile({ id });
-      // if (result?.data?.message) {
-      //   toast.success(`${result?.data?.message}`);
-      // }
-    } catch (err) {
+      const result: any = await deleteUserProfile({ id });
+      if (result?.data?.message) {
+        toast.success(`${result?.data?.message}`);
+      }
+    } catch (err: any) {
       console.log(err);
-      // if (err) {
-      //   toast.error(`${err?.data?.errMsg}`);
-      // }
+      if (err) {
+        toast.error(`${err?.data?.errMsg}`);
+      }
     }
   };
   const handleUpdate = () => {};
@@ -43,8 +47,8 @@ export const AllUsersTableBody = ({
           <div className="flex items-center text-sm">
             <div className="block relative mr-3 w-8 h-8 rounded-full">
               <Image
-              width={200}
-              height={200}
+                width={200}
+                height={200}
                 className="object-cover w-full h-full"
                 src={
                   dataMaped?.image ||
@@ -63,8 +67,18 @@ export const AllUsersTableBody = ({
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.firstName}</td>
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.lastName}</td>
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.email}</td>
-        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.phone}</td>
+        <td className="px-4 py-3 w-24 text-sm">{dataMaped?.contact}</td>
         <td className="px-4 py-3 w-24 text-sm">{dataMaped?.role}</td>
+        <td className="px-4 py-3 w-24 text-sm">
+          <ToggleButton
+            path={"/user"}
+            data={dataMaped}
+            update={"status"}
+            toggle={""}
+            id={dataMaped.id}
+          />
+        </td>
+
         <td className="px-4 py-3 text-sm">
           <button
             className="flex gap-2 px-3 py-2 text-lg bg-blue-600 rounded-lg text-slate-50"
@@ -81,7 +95,7 @@ export const AllUsersTableBody = ({
               className="flex gap-2 px-3 py-2 text-lg text-red-600 rounded-lg"
               onClick={() => handleDelete(dataMaped?.id)}
             >
-              {/* <ArchiveSvg /> */}
+              <ArchiveSvg />
             </button>
           )}
         </td>

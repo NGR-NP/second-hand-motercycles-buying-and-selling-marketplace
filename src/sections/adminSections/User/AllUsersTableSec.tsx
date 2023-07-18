@@ -18,7 +18,7 @@ const AllUsersTableSec = ({ thdata }: any) => {
       <div className="overflow-hidden w-full rounded-lg shadow-xs">
         {isFetching ? (
           <div className="bg-gray-100   h-[90vh] mb-2  max-md:h-[87.3vh] ">
-            <div className="bg-slate-300/30  w-full h-full mb-2 animate-loadingBlink max-md:h-[87.3vh] "></div>
+            <div className="bg-gray-300 animate-pulse  w-full h-full mb-2  max-md:h-[87.3vh] "></div>
           </div>
         ) : (
           <div className="overflow-x-auto w-full h-[90.6vh] max-md:h-[87.3vh]">
