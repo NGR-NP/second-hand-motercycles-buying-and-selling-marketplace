@@ -41,7 +41,7 @@ const Login = () => {
       role: "admin",
       token: "hjgjhgjyghgjygf56656i76754iturdfgfgjjhgncv",
     };
-    dispatch(setCredentials(datas))
+    dispatch(setCredentials(datas));
     if (isLoading) return;
     const { email, password, rememberMe } = data;
 
