@@ -11,7 +11,6 @@ import Image from "next/image";
 const ProductPage = () => {
   return (
     <>
-      <NavBar />
       <div className="flex flex-col mt-28 space-y-4">
         <div className="flex space-x-20 ml-52 mr-52 h-96">
           <div className="h-96 w-2/4 flex flex-col">
