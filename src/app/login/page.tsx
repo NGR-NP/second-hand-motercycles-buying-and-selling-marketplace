@@ -128,6 +128,9 @@ const LoginPage = () => {
                   {show ? <BiShow /> : <BiSolidHide />}
                 </button>
               </div>
+              <div className="text-sm text-end cursor-pointer font-raleway text-[#1E2772] underline">
+                Forgot Password?
+              </div>
               <div>{errors.password?.message}</div>
             </div>
             <div className="m-5">
