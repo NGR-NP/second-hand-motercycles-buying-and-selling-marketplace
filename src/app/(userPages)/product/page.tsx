@@ -10,12 +10,15 @@ import PowerSvg from "@/components/svg/PowerSvg";
 import TorqueSvg from "@/components/svg/TorqueSvg";
 import MileageSvg from "@/components/svg/MileageSvg";
 import TyreTypeSvg from "@/components/svg/TyreTypeSvg";
+import BikeSvg from "@/components/svg/BikeSvg";
+import LineSvg from "@/components/svg/LineSvg";
+import EvBikesCard from "@/sections/cards/EvBikesCard";
 
 const ProductPage = () => {
   return (
     <>
-      <div className="flex flex-col mt-28 space-y-4">
-        <div className="flex mr-52 ml-52 space-x-20 h-96">
+      <div className="flex flex-col mt-28 mb-5 space-y-4">
+        <div className="flex mr-52 ml-52 space-x-20 h-96 shadow-lg">
           <div className="flex flex-col w-2/4 h-96">
             <div>
               <Image
@@ -107,7 +110,7 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col p-2 mr-52 ml-52 space-y-4 border border-slate-400">
+        <div className="flex flex-col p-2 mr-52 ml-52 space-y-4 shadow-lg">
           <div className="text-xl font-bold">Specs of R15, V4</div>
           <div className="flex mr-4 ml-4 space-x-40">
             <div className="flex flex-col items-center">
@@ -154,22 +157,33 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col p-2 mr-52 ml-52 space-y-4 border border-slate-400">
+        <div className="flex flex-col p-2 mr-52 ml-52 space-y-4 shadow-lg">
           <div className="text-xl font-bold">R15, V4 Mileage</div>
           <div>
             The ARAI claimed mileage of Yamaha R15S is 40 kmpl. This is the
             claimed mileage for all variants.
           </div>
-          <div className="flex flex-col space-y-8 w-96 border-t-2 border-b-2">
-            <div className="flex space-x-48 ml-2 mr-2">
-              <div>Fuel Type</div>
-              <div>ARAI Mileage</div>
+          <div className="flex flex-col space-y-6 w-96 border-t-2 border-b-2">
+            <div className="bg-slate-100 p-4">
+              <div className="flex space-x-36 ml-2 mr-2">
+                <div>Fuel Type</div>
+                <div>ARAI Mileage</div>
+              </div>
             </div>
-            <div className="flex space-x-56 ml-2 mr-2">
-              <div>Petrol</div>
-              <div>40kmpl</div>
+            <div className="p-4">
+              <div className="flex space-x-48 ml-2 mr-2">
+                <div>Petrol</div>
+                <div>40kmpl</div>
+              </div>
             </div>
           </div>
+          <div>
+            <BikeSvg />
+            <LineSvg />
+          </div>
+        </div>
+        <div>
+          <EvBikesCard />
         </div>
       </div>
     </>
