@@ -4,9 +4,10 @@ import Image from "next/image";
 import { BiSolidColor } from "react-icons/bi";
 import { MdVerified } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
-import { PiEngineFill } from "react-icons/pi";
-import { IoFlashSharp } from "react-icons/io5";
-import { GiStopwatch, GiSpeedometer } from "react-icons/gi";
+import { PiEngineLight } from "react-icons/pi";
+import { RiFlashlightFill } from "react-icons/ri";
+import { GiStopwatch } from "react-icons/gi";
+import { MdOutlineSpeed } from "react-icons/md";
 
 const ProductPage = () => {
   return (
@@ -109,14 +110,14 @@ const ProductPage = () => {
           <div className="flex mr-4 ml-4 space-x-24">
             <div className="flex flex-col items-center">
               <div>
-                <PiEngineFill size={50} />
+                <PiEngineLight size={50} />
               </div>
               <div className="text-xs text-slate-600">Engine</div>
               <div className="text-base">155 cc</div>
             </div>
             <div className="flex flex-col items-center">
               <div>
-                <IoFlashSharp size={50} />
+                <RiFlashlightFill size={50} />
               </div>
               <div className="text-xs text-slate-600">Power</div>
               <div className="text-base">18.6 PS</div>
@@ -130,7 +131,7 @@ const ProductPage = () => {
             </div>
             <div className="flex flex-col items-center">
               <div>
-                <GiSpeedometer size={50} />
+                <MdOutlineSpeed size={50} />
               </div>
               <div className="text-xs text-slate-600">Mileage</div>
               <div className="text-base">40 KMPL</div>
