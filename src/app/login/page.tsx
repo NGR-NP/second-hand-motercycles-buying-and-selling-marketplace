@@ -35,7 +35,7 @@ const LoginPage = () => {
     const { email, password, rememberMe } = data;
     try {
       const res = await login({ email, password, rememberMe }).unwrap();
-      if (res?.data?.message === "email is not verifyed!!") {
+      if (res?.data?.message === "email is not verifyed, please check your inbox!!") {
         sessionStorage.setItem("verifyOtp", res?.data?.token);
         verifyOTPRef.current?.showModal();
       } else if (res.data.status === 200) {

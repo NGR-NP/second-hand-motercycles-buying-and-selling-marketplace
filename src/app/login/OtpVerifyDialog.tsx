@@ -24,8 +24,8 @@ const OtpVerifyDialog = ({
   const handleVerifyOTP: SubmitHandler<VerifyOtpType> = async (data) => {
     try {
       const res = await verifyOTP({
-        id: sessionStorage.getItem("userId"),
-        otp: data.otp,
+        email: email,
+        OTP: data.otp,
       });
       console.log(res);
     } catch (err) {
@@ -68,11 +68,11 @@ const OtpVerifyDialog = ({
                   {...register("otp", {
                     required: {
                       value: true,
-                      message: "enter your email !!",
+                      message: "enter your 6 digit verification code !!",
                     },
                     minLength: {
                       value: 6,
-                      message: "",
+                      message: "invalid otp, please recheck you email",
                     },
                     maxLength: {
                       value: 6,
