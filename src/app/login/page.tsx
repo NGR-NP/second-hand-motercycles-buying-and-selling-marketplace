@@ -52,21 +52,21 @@ const LoginPage = () => {
 
   return (
     <section className="h-screen bg-[url('/images/background/bg-hero-section.jpg')]">
-      <div className="h-screen absolute w-screen bg-black/20" />
-      <div className="flex h-full items-center justify-center mx-4">
-        <div className="flex flex-col z-10 items-center border  border-white bg-white shadow-2xl rounded-xl h-auto w-full max-w-lg p-4">
-          <div className="flex flex-col space-y-2 text-xl font-semibold font-inter items-center">
+      <div className="absolute w-screen h-screen bg-black/20" />
+      <div className="flex justify-center items-center mx-4 h-full">
+        <div className="flex z-10 flex-col items-center p-4 w-full max-w-lg h-auto bg-white rounded-xl border border-white shadow-2xl">
+          <div className="flex flex-col items-center space-y-2 text-xl font-semibold font-inter">
             <div>
               <AppLogo />
             </div>
             <div>Login your account</div>
           </div>
           <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex w-[85%] mx-auto flex-col m-5 space-y-2">
+            <div className="flex w-[95%] mx-auto flex-col m-5 space-y-2">
               <div>Email Address</div>
               <div className="flex w">
                 <input
-                  className="border w-full outline-none bg-slate-100 rounded-l-md rounded-tl-md p-2 pr-9"
+                  className="p-2 pr-9 w-full rounded-l-md rounded-tl-md border outline-none bg-slate-100"
                   // type="email"
                   placeholder="your@email.com"
                   style={
@@ -85,17 +85,17 @@ const LoginPage = () => {
                     },
                   })}
                 />
-                <div className="bg-secondary text-white  py-1 px-4 text-2xl right-2 rounded-r-md items-center flex">
+                <div className="flex right-2 items-center px-4 py-1 text-2xl text-white rounded-r-md bg-secondary">
                   <FiMail />
                 </div>
               </div>
               <div>{errors.email?.message}</div>
             </div>
-            <div className="flex w-[85%] mx-auto flex-col m-4 space-y-2">
+            <div className="flex w-[95%] mx-auto flex-col m-4 space-y-2">
               <div>Password</div>
               <div className="flex">
                 <input
-                  className="border w-full outline-none bg-slate-100 rounded-l-md rounded-tl-md p-2 pr-9"
+                  className="p-2 pr-9 w-full rounded-l-md rounded-tl-md border outline-none bg-slate-100"
                   type={show ? "text" : "password"}
                   placeholder="************"
                   style={
@@ -123,7 +123,7 @@ const LoginPage = () => {
                 <button
                   type="button"
                   onClick={() => setShow(!show)}
-                  className="bg-secondary text-white py-1 px-4 text-2xl right-2 rounded-r-md items-center flex"
+                  className="flex right-2 items-center px-4 py-1 text-2xl text-white rounded-r-md bg-secondary"
                 >
                   {show ? <BiShow /> : <BiSolidHide />}
                 </button>
@@ -131,9 +131,9 @@ const LoginPage = () => {
               <div>{errors.password?.message}</div>
             </div>
             <div className="m-5">
-              <div className="flex justify-center relative ">
+              <div className="flex relative justify-center">
                 <input
-                  className="border cursor-pointer relative border-red-100  h-10 w-48  font-inter text-white rounded-xl bg-secondary hover:shadow-sm hover:bg-orange-400"
+                  className="relative w-48 h-10 text-white rounded-xl border border-red-100 cursor-pointer font-inter bg-secondary hover:shadow-sm hover:bg-orange-400"
                   type="submit"
                   value="login now"
                 />{" "}
@@ -145,12 +145,12 @@ const LoginPage = () => {
           </form>
           <div className="w-full z-40 h-[1px] bg-slate-300" />
           <div className="relative z-50">
-            <div className="absolute -top-3 right-2/4 translate-x-2/4 text-slate-400 text-sm bg-white w-12 text-center ">
+            <div className="absolute -top-3 right-2/4 w-12 text-sm text-center bg-white translate-x-2/4 text-slate-400">
               OR
             </div>
           </div>
           <div className="m-5">
-            <button className="border border-orange-300 text-secondary h-10 w-48 font-inter rounded-xl hover:shadow-2xl">
+            <button className="w-48 h-10 rounded-xl border border-orange-300 text-secondary font-inter hover:shadow-2xl">
               Signup now
             </button>
           </div>
