@@ -6,61 +6,47 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { PiEngineThin } from "react-icons/pi";
 import { IoFlashSharp } from "react-icons/io5";
 import { GiStopwatch, GiSpeedometer } from "react-icons/gi";
+import Image from "next/image";
 
 const ProductPage = () => {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col mt-24 space-y-4">
-        {/* for secondary Navigations */}
-        <div className="border-b-2 font-inter">
-          <div className="flex ml-52 mr-52 space-x-16 p-2">
-            <div>
-              <select className="outline-none" name="any">
-                <option value="Bike">BIKES</option>
-                <option value="KTM">KTM</option>
-                <option value="Honda">Honda</option>
-              </select>
-            </div>
-            <div>
-              <select className="outline-none" name="any">
-                <option value="SCOOTERS">SCOOTERS</option>
-                <option value="Hero">HERO</option>
-                <option value="TVS">TVS</option>
-              </select>
-            </div>
-            <div>
-              <select className="outline-none" name="any">
-                <option value="Electric Zone">ELECTRIC ZONE</option>
-              </select>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col mt-28 space-y-4">
         <div className="flex space-x-20 ml-52 mr-52 h-96">
           <div className="h-96 w-2/4 flex flex-col">
             <div>
-              <img
+              <Image
+                height={200}
+                width={200}
+                className="w-full h-full"
                 src="/images/background/bg-hero-section.jpg"
                 alt="background"
               />
             </div>
             <div className="flex space-x-2 mt-2">
               <div>
-                <img
+                <Image
+                  height={200}
+                  width={200}
                   className="rounded-xl"
                   src="/images/background/bg-hero-section.jpg"
                   alt="background"
                 />
               </div>
               <div>
-                <img
+                <Image
+                  height={200}
+                  width={200}
                   className="rounded-xl"
                   src="/images/background/bg-hero-section.jpg"
                   alt="background"
                 />
               </div>
               <div>
-                <img
+                <Image
+                  height={200}
+                  width={200}
                   className="rounded-xl"
                   src="/images/background/bg-hero-section.jpg"
                   alt="background"
