@@ -4,10 +4,12 @@ import Image from "next/image";
 import { BiSolidColor } from "react-icons/bi";
 import { MdVerified } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
-import { PiEngineLight } from "react-icons/pi";
-import { RiFlashlightFill } from "react-icons/ri";
-import { GiStopwatch } from "react-icons/gi";
-import { MdOutlineSpeed } from "react-icons/md";
+import BrakesSvg from "@/components/svg/BrakesSvg";
+import EngineSvg from "@/components/svg/EngineSvg";
+import PowerSvg from "@/components/svg/PowerSvg";
+import TorqueSvg from "@/components/svg/TorqueSvg";
+import MileageSvg from "@/components/svg/MileageSvg";
+import TyreTypeSvg from "@/components/svg/TyreTypeSvg";
 
 const ProductPage = () => {
   return (
@@ -107,34 +109,65 @@ const ProductPage = () => {
         </div>
         <div className="flex flex-col p-2 mr-52 ml-52 space-y-4 border border-slate-400">
           <div className="text-xl font-bold">Specs of R15, V4</div>
-          <div className="flex mr-4 ml-4 space-x-24">
+          <div className="flex mr-4 ml-4 space-x-40">
             <div className="flex flex-col items-center">
               <div>
-                <PiEngineLight size={50} />
+                <EngineSvg />
               </div>
               <div className="text-xs text-slate-600">Engine</div>
               <div className="text-base">155 cc</div>
             </div>
             <div className="flex flex-col items-center">
               <div>
-                <RiFlashlightFill size={50} />
+                <PowerSvg />
               </div>
               <div className="text-xs text-slate-600">Power</div>
               <div className="text-base">18.6 PS</div>
             </div>
             <div className="flex flex-col items-center">
               <div>
-                <GiStopwatch size={50} />
+                <TorqueSvg />
               </div>
               <div className="text-xs text-slate-600">Torque</div>
               <div className="text-base">1.1 NM</div>
             </div>
             <div className="flex flex-col items-center">
               <div>
-                <MdOutlineSpeed size={50} />
+                <MileageSvg />
               </div>
               <div className="text-xs text-slate-600">Mileage</div>
               <div className="text-base">40 KMPL</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div>
+                <BrakesSvg />
+              </div>
+              <div className="text-xs text-slate-600">Brakes</div>
+              <div className="text-base">Double Disc</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div>
+                <TyreTypeSvg />
+              </div>
+              <div className="text-xs text-slate-600">Tyre Type</div>
+              <div className="text-base">Tubeless</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col p-2 mr-52 ml-52 space-y-4 border border-slate-400">
+          <div className="text-xl font-bold">R15, V4 Mileage</div>
+          <div>
+            The ARAI claimed mileage of Yamaha R15S is 40 kmpl. This is the
+            claimed mileage for all variants.
+          </div>
+          <div className="flex flex-col space-y-8 w-96 border-t-2 border-b-2">
+            <div className="flex space-x-48 ml-2 mr-2">
+              <div>Fuel Type</div>
+              <div>ARAI Mileage</div>
+            </div>
+            <div className="flex space-x-56 ml-2 mr-2">
+              <div>Petrol</div>
+              <div>40kmpl</div>
             </div>
           </div>
         </div>
