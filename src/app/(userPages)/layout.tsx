@@ -1,3 +1,4 @@
+import Footer from "@/sections/Footer";
 import NavBar from "@/sections/NavBar";
 import AdminAsideSec from "@/sections/adminSections/AdminAsideSec";
 import React from "react";
@@ -11,6 +12,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
     <div>
       <NavBar />
       {children}
+      <Footer />
     </div>
   );
 };
