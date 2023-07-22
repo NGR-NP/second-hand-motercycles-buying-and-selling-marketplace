@@ -66,7 +66,7 @@ const LoginPage = () => {
           <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex w-[95%] mx-auto flex-col m-5 space-y-2">
               <div>Email Address</div>
-              <div className="flex w">
+              <div className={`flex ${errors.email && "animate-shake"}`}>
                 <input
                   className="p-2 pr-9 w-full rounded-l-md rounded-tl-md border outline-none bg-slate-100"
                   // type="email"
@@ -91,11 +91,11 @@ const LoginPage = () => {
                   <FiMail />
                 </div>
               </div>
-              <div>{errors.email?.message}</div>
+              <div className="text-red-500">{errors.email?.message}</div>
             </div>
             <div className="flex w-[95%] mx-auto flex-col m-4 space-y-2">
               <div>Password</div>
-              <div className="flex">
+              <div className={`flex ${errors.password && "animate-shake"}`}>
                 <input
                   className="p-2 pr-9 w-full rounded-l-md rounded-tl-md border outline-none bg-slate-100"
                   type={show ? "text" : "password"}
@@ -130,7 +130,7 @@ const LoginPage = () => {
                   {show ? <BiShow /> : <BiSolidHide />}
                 </button>
               </div>
-              <div>{errors.password?.message}</div>
+              <div className="text-red-500">{errors.password?.message}</div>
               <div className="text-sm text-end cursor-pointer font-raleway text-[#1E2772] underline">
                 Forgot Password?
               </div>
@@ -157,9 +157,9 @@ const LoginPage = () => {
           <div className="m-5">
             <Link
               href={"/register"}
-              className="w-48 h-10 rounded-xl border border-orange-300 text-secondary font-inter hover:shadow-2xl"
+              className="flex justify-center items-center w-48 h-10 rounded-xl border border-orange-300 text-secondary font-inter hover:shadow-2xl"
             >
-              Register now
+              Let's Register
             </Link>
           </div>
         </div>
