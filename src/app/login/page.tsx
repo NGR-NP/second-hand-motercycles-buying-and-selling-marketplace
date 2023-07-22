@@ -10,6 +10,7 @@ import { useLoginMutation } from "@/redux/auth/authApiSlice";
 import { useAppDispatch } from "@/redux/app/ReduxHooks";
 import LoadingCircleSvg from "@/components/svg/loading/LoadingCircleSvg";
 import OtpVerifyDialog from "./OtpVerifyDialog";
+import Link from "next/link";
 
 const LoginPage = () => {
   const [show, setShow] = useState(false);
@@ -32,26 +33,27 @@ const LoginPage = () => {
   const onSubmit: SubmitHandler<LoginType> = async (data) => {
     console.log("first");
     if (isLoading) return;
-    const { email, password, rememberMe } = data;
+    const { email, password } = data;
     try {
-      const res = await login({ email, password, rememberMe }).unwrap();
-      if (res?.data?.message === "email is not verifyed, please check your inbox!!") {
+      const res = await login({ email, password }).unwrap();
+      const { message } = res;
+      if (message === "email is not verifyed, please check your inbox!!") {
         sessionStorage.setItem("verifyOtp", res?.data?.token);
         verifyOTPRef.current?.showModal();
-      } else if (res.data.status === 200) {
+      } else if (status === 200) {
         dispatch(setCredentials(res.data));
       } else {
         toast.error("unhandle response");
         console.log(res);
       }
-    } catch (err) {
-      console.log(error);
-      toast.error(`${error?.data?.msg}`);
+    } catch (err: any) {
+      console.log(err);
+      toast.error(err?.data?.message);
     }
   };
 
   return (
-    <section className="h-screen bg-[url('/images/background/bg-hero-section.jpg')]">
+    <section className="h-screen bg-[url('/images/background/bg-hero-section.jpg')] bg-cover bg-no-repeat bg-center">
       <div className="absolute w-screen h-screen bg-black/20" />
       <div className="flex justify-center items-center mx-4 h-full">
         <div className="flex z-10 flex-col items-center p-4 w-full max-w-lg h-auto bg-white rounded-xl border border-white shadow-2xl">
@@ -77,7 +79,7 @@ const LoginPage = () => {
                   {...register("email", {
                     required: {
                       value: true,
-                      message: "enter your email !!",
+                      message: "email is required!!",
                     },
                     pattern: {
                       value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
@@ -106,18 +108,18 @@ const LoginPage = () => {
                   {...register("password", {
                     required: {
                       value: true,
-                      message: "enter your password!!",
+                      message: "password is required!!",
                     },
-                    minLength: {
-                      value: 8,
-                      message: "At least 8 characters required",
-                    },
-                    maxLength: {
-                      value: 50,
-                      message: "more then 50 characters only allowed!!",
-                    },
-                    pattern:
-                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
+                    // minLength: {
+                    //   value: 8,
+                    //   message: "At least 8 characters required",
+                    // },
+                    // maxLength: {
+                    //   value: 50,
+                    //   message: "more then 50 characters only allowed!!",
+                    // },
+                    // pattern:
+                    //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,50}$/i,
                   })}
                 />
                 <button
@@ -128,20 +130,20 @@ const LoginPage = () => {
                   {show ? <BiShow /> : <BiSolidHide />}
                 </button>
               </div>
+              <div>{errors.password?.message}</div>
               <div className="text-sm text-end cursor-pointer font-raleway text-[#1E2772] underline">
                 Forgot Password?
               </div>
-              <div>{errors.password?.message}</div>
             </div>
             <div className="m-5">
               <div className="flex relative justify-center">
                 <input
-                  className="relative w-48 h-10 text-white rounded-xl border border-red-100 cursor-pointer font-inter bg-secondary hover:shadow-sm hover:bg-orange-400"
+                  className="w-48 h-10 text-white rounded-xl border border-red-100 cursor-pointer font-inter bg-secondary hover:shadow-sm hover:bg-orange-400"
                   type="submit"
                   value="login now"
                 />{" "}
                 {isLoading && (
-                  <LoadingCircleSvg style={"absolute top-[30%] right-4"} />
+                  <LoadingCircleSvg style={"absolute top-[30%]  right-[30%]"} />
                 )}
               </div>
             </div>
@@ -153,9 +155,12 @@ const LoginPage = () => {
             </div>
           </div>
           <div className="m-5">
-            <button className="w-48 h-10 rounded-xl border border-orange-300 text-secondary font-inter hover:shadow-2xl">
-              Signup now
-            </button>
+            <Link
+              href={"/register"}
+              className="w-48 h-10 rounded-xl border border-orange-300 text-secondary font-inter hover:shadow-2xl"
+            >
+              Register now
+            </Link>
           </div>
         </div>
       </div>

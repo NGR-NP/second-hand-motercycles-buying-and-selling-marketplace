@@ -2,6 +2,7 @@ import CloseSvg from "@/components/svg/CloseSvg";
 import { useVerifyOTPMutation } from "@/redux/auth/authApiSlice";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const OtpVerifyDialog = ({
   verifyOTPRef,
@@ -12,7 +13,7 @@ const OtpVerifyDialog = ({
   closeDialog: any;
   email: string;
 }) => {
-  const [verifyOTP, { isLoading, isSuccess, isError, error, status }]:any =
+  const [verifyOTP, { isLoading, isSuccess, isError, error, status }]: any =
     useVerifyOTPMutation();
 
   const {
@@ -26,10 +27,13 @@ const OtpVerifyDialog = ({
       const res = await verifyOTP({
         email: email,
         OTP: data.otp,
-      });
-      console.log(res);
+      }).unwrap();
+      if (res.message === "email verified") {
+        toast.success("email verifyed successfully");
+        closeDialog();
+      }
     } catch (err) {
-      console.log(error?.data.msg)
+      toast.error(error?.data.message);
     }
   };
   return (

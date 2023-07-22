@@ -1,7 +1,6 @@
 type LoginType = {
   email: string;
   password: string;
-  rememberMe: boolean;
 };
 
 type LoggedInUserData = {

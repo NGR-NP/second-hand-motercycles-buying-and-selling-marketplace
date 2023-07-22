@@ -30,7 +30,7 @@ export const VerifyOTPAuthSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     verifyOTP: builder.mutation({
       query: (credentials: any) => ({
-        url: "/verify-email",
+        url: "/user/verification",
         method: "POST",
         body: { ...credentials },
       }),
